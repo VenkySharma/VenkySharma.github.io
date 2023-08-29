@@ -9,6 +9,29 @@ body {
     margin: 0;
     padding: 0;
 }
+@keyframes scrollingAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#scroll-animation {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  border: 2px solid #0f0;
+  border-radius: 50%;
+  animation: scrollingAnimation 2s infinite ease-in-out;
+}
 
 .container {
     max-width: 800px;
@@ -43,26 +66,4 @@ p {
 }
 
 
-@keyframes scrollingAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
-#scroll-animation {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 25px;
-  height: 25px;
-  border: 2px solid #0f0;
-  border-radius: 50%;
-  animation: scrollingAnimation 2s infinite ease-in-out;
-}
