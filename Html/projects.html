@@ -5,8 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Default color scheme */
+    body.light-mode {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+  
+    /* Dark mode color scheme */
+    body.dark-mode {
+      background-color: #343a40;
+      color: #f8f9fa;
+    }
+  </style >
 </head>
-<body>
+<body class="light-mode">
   
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -27,6 +40,10 @@
         </li>
       </ul>
     </div>
+    <!-- Dark mode toggle button -->
+  <div class="container text-right mt-2">
+    <button id="darkModeToggle" class="btn btn-primary">Toggle Dark Mode</button>
+  </div>
   </nav>
 
   <!-- Main Content -->
@@ -93,12 +110,18 @@
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    &copy; 2023 My Portfolio. All rights reserved.
+    &copy; 2023 My Projects. All rights reserved.
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<!-- Dark mode toggle functionality -->
+  <script>
+    // Toggle dark mode
+    document.getElementById("darkModeToggle").addEventListener("click", function() {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
 </body>
 </html>
