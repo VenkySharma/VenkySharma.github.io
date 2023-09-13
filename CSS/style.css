@@ -219,7 +219,6 @@ body {
     transform: translate(-50%);
     max-width: 350px;
     object-fit: cover;
-    overflow: hidden;
 }
 
 .glowing-circle .image {
@@ -228,6 +227,7 @@ body {
     height: 380px;
     border-radius: 50%;
     z-index: 1;
+    overflow: hidden
 }
 
 .navbar-1 a {
