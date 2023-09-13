@@ -219,6 +219,7 @@ body {
     transform: translate(-50%);
     max-width: 350px;
     object-fit: cover;
+    overflow: hidden;
 }
 
 .glowing-circle .image {
