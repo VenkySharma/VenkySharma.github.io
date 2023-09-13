@@ -227,7 +227,8 @@ body {
     height: 380px;
     border-radius: 50%;
     z-index: 1;
-    overflow: hidden
+    overflow: hidden;
+    object-fit: cover;
 }
 
 .navbar-1 a {
