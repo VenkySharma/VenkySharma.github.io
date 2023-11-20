@@ -27,13 +27,14 @@
             background: rgba(0, 0, 0, 0.7); /* Adjust the background opacity as needed */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: animate__animated animate__fadeInUp;
         }
 
         #conference-logo {
             max-width: 200px;
             height: auto;
             margin-bottom: 20px;
-            animation: animate__animated animate__bounceIn;
+            animation: animate__animated animate__fadeIn;
         }
 
         h2 {
@@ -57,20 +58,37 @@
             font-size: 1.2em;
             animation: animate__animated animate__fadeIn;
         }
+
+        #cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #cta-button:hover {
+            background-color: #d81b60;
+        }
     </style>
 </head>
 <body>
 
     <div id="coming-soon-container">
-        <img id="conference-logo" src="./Images/Copy of ICMI.png" alt="ICMI 2024 Logo">
-        <h2>🔜 Coming Soon 🔜</h2>
-        <h3>ICMI 2024</h3>
+        <img id="conference-logo" src="/Images/Copy of ICMI.png" alt="ICMI 2024 Logo">
+        <h2>🚀 Exciting News Coming Soon! 🚀</h2>
+        <h3>Join Us at ICMI 2024</h3>
         <p>Indian Conference on MedTech Innovations<br>
             An initiative of IITJ, AIIMSJ & JCKIF</p>
         <p><strong>Event Date:</strong> February 1st - 3rd, 2024</p>
         <p><strong>Event Venue:</strong> IIT Jodhpur & AIIMS Jodhpur</p>
         <p>👥 Stay tuned for groundbreaking innovations!<br>
             #ICMI2024 #MedTechInnovations</p>
+        <a id="cta-button" href="#" target="_blank">Learn More</a>
     </div>
 
     <script>
