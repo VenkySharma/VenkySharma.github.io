@@ -8,56 +8,68 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #111;
-            color: #fff;
             margin: 0;
             padding: 0;
+            background-image: url('./Images/venky.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
 
         #coming-soon-container {
             text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Adjust the background opacity as needed */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         #conference-logo {
             max-width: 200px;
             height: auto;
             margin-bottom: 20px;
+            animation: animate__animated animate__bounceIn;
         }
 
         h2 {
             font-size: 2em;
             margin-bottom: 20px;
+            animation: animate__animated animate__fadeIn;
         }
 
         h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
+            animation: animate__animated animate__fadeIn;
         }
 
         p {
             margin-bottom: 10px;
+            animation: animate__animated animate__fadeIn;
         }
 
         #event-details {
             font-size: 1.2em;
+            animation: animate__animated animate__fadeIn;
         }
     </style>
 </head>
 <body>
 
-    <div id="coming-soon-container" class="animate__animated animate__fadeIn">
-        <img id="conference-logo" src="./Images/Copy of ICMI.png" alt="ICMI 2024 Logo" class="animate__animated animate__bounceIn">
-        <h2 class="animate__animated animate__fadeIn">🔜 Coming Soon 🔜</h2>
-        <h3 class="animate__animated animate__fadeIn">ICMI 2024</h3>
-        <p class="animate__animated animate__fadeIn">Indian Conference on MedTech Innovations<br>
+    <div id="coming-soon-container">
+        <img id="conference-logo" src="./Images/Copy of ICMI.png" alt="ICMI 2024 Logo">
+        <h2>🔜 Coming Soon 🔜</h2>
+        <h3>ICMI 2024</h3>
+        <p>Indian Conference on MedTech Innovations<br>
             An initiative of IITJ, AIIMSJ & JCKIF</p>
-        <p class="animate__animated animate__fadeIn"><strong>Event Date:</strong> February 1st - 3rd, 2024</p>
-        <p class="animate__animated animate__fadeIn"><strong>Event Venue:</strong> IIT Jodhpur & AIIMS Jodhpur</p>
-        <p class="animate__animated animate__fadeIn">👥 Stay tuned for groundbreaking innovations!<br>
+        <p><strong>Event Date:</strong> February 1st - 3rd, 2024</p>
+        <p><strong>Event Venue:</strong> IIT Jodhpur & AIIMS Jodhpur</p>
+        <p>👥 Stay tuned for groundbreaking innovations!<br>
             #ICMI2024 #MedTechInnovations</p>
     </div>
 
