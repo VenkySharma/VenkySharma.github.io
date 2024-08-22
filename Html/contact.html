@@ -57,6 +57,14 @@
         .mdl-mini-footer a:hover {
             text-decoration: underline;
         }
+        .buy-me-coffee-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .buy-me-coffee-section img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -64,16 +72,11 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
             <div class="mdl-layout__header-row portfolio-logo-row">
-                <span class="mdl-layout__title">
-                    <span class="mdl-layout__title">My Portfolio</span>
-                </span>
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="index.html">Portfolio</a>
-                    <a class="mdl-navigation__link" href="blog.html">Blog</a>
-                    <a class="mdl-navigation__link" href="about.html">About</a>
-                    <a class="mdl-navigation__link is-active" href="contact.html">Contact</a>
+                    <a class="mdl-navigation__link" href="/index.html">Home</a>
+                    <a class="mdl-navigation__link" href="blog.html">Back to blog</a>
                 </nav>
             </div>
         </header>
@@ -112,9 +115,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Buy Me a Coffee Section -->
+            <div class="mdl-grid portfolio-max-width buy-me-coffee-section">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Support Me</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>If you found my content helpful, consider buying me a coffee! 😊</p>
+                        <img src="your-qr-code-image-url-here" alt="UPI QR Code">
+                        <p>Scan the QR code or use the UPI ID below to send your support:</p>
+                        <p><strong>UPI ID:</strong> your-upi-id@bank</p>
+                        <p>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                Copy UPI ID
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <footer class="mdl-mini-footer">
                 <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">My Portfolio</div>
+                    <div class="mdl-logo">Thanks for visiting</div>
                 </div>
                 <div class="mdl-mini-footer__right-section">
                     <ul class="mdl-mini-footer__link-list">
@@ -126,6 +150,15 @@
         </main>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+        // JavaScript to copy the UPI ID to clipboard
+        document.querySelector('.mdl-button--accent').addEventListener('click', function() {
+            const upiId = "your-upi-id@bank";
+            navigator.clipboard.writeText(upiId).then(() => {
+                alert('UPI ID copied to clipboard!');
+            });
+        });
+    </script>
 </body>
 
 </html>
