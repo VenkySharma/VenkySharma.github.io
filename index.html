@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/CSS/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
 
 </head>
 <body>
@@ -81,16 +82,24 @@
     <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:14px;">
           👀 Visitors: <span id="visitorCount">Loading...</span>
     </footer>
+
         <script> // === Visitor Counter ===
-        fetch('https://api.countapi.xyz/hit/venkysharma.github.io/global-visits')
-          .then(res => res.json())
-          .then(data => {
-            document.getElementById('visitorCount').innerText = data.value;
-          })
-          .catch(err => {
-            console.error('Visitor count failed', err);
-            document.getElementById('visitorCount').innerText = 'N/A';
-          });
+        // === Global Visitor Counter using CounterAPI v2 ===
+        document.addEventListener('DOMContentLoaded', function () {
+          // Replace with your workspace name (any unique string)
+          const counter = new Counter({ workspace: 'dev-venky' });
+
+          // Increment the counter each time the page is visited
+          counter.up('global-visits')
+            .then(result => {
+              document.getElementById('visitorCount').textContent = result.value;
+            })
+            .catch(error => {
+              console.error('Error tracking visitor count:', error);
+              document.getElementById('visitorCount').textContent = 'N/A';
+            });
+        });
+
     </script>
 
 </body> 
