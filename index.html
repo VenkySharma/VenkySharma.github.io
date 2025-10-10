@@ -19,7 +19,7 @@
     <script src="/JS/matrix.js"></script>
 
     <header class="header">
-        <a href="#" class="logo">{Venkatesh Sharma} </a>
+        <a href="#" class="logo">Venkatesh Sharma </a>
 
         <nav class="navbar">
             <a href="#home" style="--i:1;" class="active">Home</a>
@@ -33,16 +33,16 @@
     <section id="home" class="home">
 
         <div class="home-content" data-scroll data-scroll-speed="-5" >
-            <h3 class="mu">Hello, It's me</h3>
-            <h1>Venky</h1>
-            <h3>And I'm a <span class="pro-text">
+            <h3 class="mu">Venky</h3>
+        
+            <h3>is <span class="pro-text">
                 <script>
                    var typed = new Typed(".pro-text", {
                       strings: [
-                        "Security Researcher",
-                          "Ethical Hacker",
-                          "IITIAN",
-                          "Software Developer",
+                        "a Security Researcher",
+                          "an Ethical Hacker",
+                          "an IITIAN",
+                          
                           
                       ],
                       typeSpeed: 100,   
@@ -53,10 +53,10 @@
                 </script>
             </span></h3>
             
-            <p>  &emsp; &emsp;This portfolio highlights my passion for cybersecurity and my commitment to ethical practices. <br> <br>
-                &emsp; &emsp;I have acquired fundamental knowledge and skills in various areas of ethical hacking, 
+            <p>  &emsp; &emsp;Welcome to the wolrd of cybersecurity and its practices. <br> <br>
+                &emsp; &emsp;I have acquired fundamental knowledge and skills in various areas of Cyber Security, 
                 allowing me to contribute to the security of organizations and individuals. <br> <br>
-                &emsp; &emsp;Love to play with the system, Network and their Loopholes.  
+                &emsp; &emsp;Love to play with the system, Network and their Vulnerabilities.  
             </p>
 
             <div class="home-sci">
@@ -77,6 +77,20 @@
         </div>
 
     </section>
+    <script> // === Visitor Counter ===
+        fetch('https://api.countapi.xyz/hit/venkysharma.github.io/visits')
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('visitorCount').innerText = data.value;
+          })
+          .catch(err => {
+            console.error('Visitor count failed', err);
+            document.getElementById('visitorCount').innerText = 'N/A';
+          });
+    </script>
+    <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:14px;">
+          👀 Visitors: <span id="visitorCount">Loading...</span>
+    </footer>
 
 </body> 
 </html> 
