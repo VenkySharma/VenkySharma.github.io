@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venky-Blogs</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Add your own CSS file for additional styling -->
+  <!-- Add your own CSS file for additional styling --
   <link rel="stylesheet" href="styles.css">
-  <!-- Add Animate.css library for animation -->
+  <!-- Add Animate.css library for animation --
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
   
-  <!-- Navbar -->
-  <!-- Include the same navbar as in projects.html -->
+  <!-- Navbar --
+  <!-- Include the same navbar as in projects.html --
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">My Blogs</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Main Content --
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-6 mb-4">
@@ -72,18 +72,110 @@
         </div>
       </div>
     </div>
-      <!-- Add more blog cards here -->
+      <!-- Add more blog cards here --
     </div>
   </div>
 
   <!-- Footer -->
-  <!-- Include the same footer as in projects.html -->
+  <!-- Include the same footer as in projects.html --
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!-- Add your own JavaScript file for any additional functionality -->
+  <!-- Add your own JavaScript file for any additional functionality --
   <script src="script.js"></script>
+  
 
+</body>
+</html> -->
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modern Blog — Template</title>
+  <meta name="description" content="Modern responsive blog template with summaries, read-more modal or external redirect." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">MB</div>
+      <div>
+        <div class="title">Modern Blog</div>
+        <div class="subtitle">A fast, modern blog template — summary cards & read-more modal</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="search" role="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M11 19a8 8 0 100-16 8 8 0 000 16z" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 21l-4.35-4.35" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <input id="search" placeholder="Search posts, tags, authors" aria-label="Search posts">
+      </div>
+      <button class="btn" id="newPostBtn">New post</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+        <h1 style="margin:0">Latest posts</h1>
+        <div style="color:var(--muted);font-size:13px">Showing <span id="count">0</span> posts</div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <aside>
+      <div class="profile">
+        <div class="avatar">AB</div>
+        <div>
+          <div style="font-weight:700">Alex Bhat</div>
+          <div class="bio">Software engineer, designer & storyteller. I write about front-end, design systems and product thinking.</div>
+        </div>
+      </div>
+
+      <hr class="divider">
+      <div style="font-weight:700;margin-bottom:8px">Popular tags</div>
+      <div class="taglist">
+        <button class="tag">UI</button>
+        <button class="tag">JavaScript</button>
+        <button class="tag">Design</button>
+        <button class="tag">CSS</button>
+      </div>
+      <hr class="divider">
+      <div class="aside-tip">Tip: click "Read" to open here, or "Open externally" to go to a separate page like Medium.</div>
+    </aside>
+  </main>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="backdrop" role="dialog" aria-modal="true">
+    <article class="modal fade-up" id="modal">
+      <div class="modal-header">
+        <div>
+          <div id="modalKicker" class="modal-kicker"></div>
+          <h2 id="modalTitle"></h2>
+          <div id="modalMeta" class="modal-meta"></div>
+        </div>
+        <div class="modal-actions">
+          <button class="close" id="externalOpen">Open externally</button>
+          <button class="close" id="closeModal">Close</button>
+        </div>
+      </div>
+      <hr class="divider">
+      <div id="modalContent" class="modal-content"></div>
+    </article>
+  </div>
+
+  <script src="/JS/blog.js"></script>
 </body>
 </html>
