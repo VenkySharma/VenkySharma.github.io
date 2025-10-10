@@ -156,9 +156,9 @@ searchInput.addEventListener('input', () => {
 });
 
 // New post button (demo)
-document.getElementById('newPostBtn').addEventListener('click', () => {
-  alert('Hook this to your CMS or create a new markdown file in your repo.');
-});
+//document.getElementById('newPostBtn').addEventListener('click', () => {
+//  alert('Hook this to your CMS or create a new markdown file in your repo.');
+//});
 
 // Initial render
 renderCards(posts);
