@@ -294,6 +294,17 @@ canvas {
     animation-delay: 1.3s;
 }
 
+
+/* Footer */
+footer {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+footer:hover {
+  opacity: 1;
+}
+
+
 /* Animation */
 @keyframes slideTop {
     0% {
