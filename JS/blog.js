@@ -35,7 +35,7 @@ const posts = [
     summary: 'Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.',
     image: 'https://images.unsplash.com/photo-1526925539332-aa3b66e35444?q=80&w=1400&auto=format&fit=crop',
     content: `<p>Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.</p>`,
-    external: ''
+    external: '/Html/Blogs/ML/Assignment2/m23cse028_report.html'
   }
 ];
 
