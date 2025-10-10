@@ -15,15 +15,16 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0;
-  background: linear-gradient(180deg,#071023 0%, #081226 40%, #061021 100%);
-  color:#e6eef8;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  gap:24px;
+body {
+  margin: 0;
+  background: var(--bg);  /* use your black variable */
+  color: #c0ffc0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
+
 
 /* HEADER */
 header{display:flex;align-items:center;justify-content:space-between;gap:16px}
