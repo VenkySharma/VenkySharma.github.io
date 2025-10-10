@@ -79,6 +79,39 @@ function renderCards(list) {
   });
   countEl.textContent = list.length;
 }
+// Function to generate tag
+function generatePopularTags() {
+  const tagCount = {};
+  
+  posts.forEach(post => {
+    const tags = post.kicker.split('·').map(t => t.trim());
+    tags.forEach(tag => {
+      if (tagCount[tag]) tagCount[tag]++;
+      else tagCount[tag] = 1;
+    });
+  });
+
+  // Sort tags by frequency
+  const sortedTags = Object.entries(tagCount)
+    .sort((a, b) => b[1] - a[1])
+    .map(entry => entry[0]);
+
+  const tagListContainer = document.querySelector('.taglist');
+  tagListContainer.innerHTML = '';
+
+  sortedTags.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'tag';
+    btn.textContent = tag;
+    btn.onclick = () => filterByTag(tag);
+    tagListContainer.appendChild(btn);
+  });
+}
+// Filter post when tag is called
+function filterByTag(tag) {
+  const filtered = posts.filter(post => post.kicker.includes(tag));
+  renderCards(filtered);
+}
 
 // Modal handling
 function openInModal(id) {
@@ -129,6 +162,8 @@ document.getElementById('newPostBtn').addEventListener('click', () => {
 
 // Initial render
 renderCards(posts);
+generatePopularTags();
+
 
 // Open from URL hash
 (function openFromHash() {
