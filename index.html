@@ -85,9 +85,10 @@
 
         <script> // === Visitor Counter ===
         // === Global Visitor Counter using CounterAPI v2 ===
+        src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"
         document.addEventListener('DOMContentLoaded', function () {
           // Replace with your workspace name (any unique string)
-          const counter = new Counter({ workspace: 'dev-venky' });
+          const counter = new Counter({ workspace: 'https://venkysharma.github.io' });
 
           // Increment the counter each time the page is visited
           counter.up('global-visits')
