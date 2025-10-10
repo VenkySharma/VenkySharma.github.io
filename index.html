@@ -77,8 +77,12 @@
         </div>
 
     </section>
-    <script> // === Visitor Counter ===
-        fetch('https://api.countapi.xyz/hit/venkysharma.github.io/visits')
+
+    <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:14px;">
+          👀 Visitors: <span id="visitorCount">Loading...</span>
+    </footer>
+        <script> // === Visitor Counter ===
+        fetch('https://api.countapi.xyz/hit/venkysharma.github.io/global-visits')
           .then(res => res.json())
           .then(data => {
             document.getElementById('visitorCount').innerText = data.value;
@@ -88,9 +92,6 @@
             document.getElementById('visitorCount').innerText = 'N/A';
           });
     </script>
-    <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:14px;">
-          👀 Visitors: <span id="visitorCount">Loading...</span>
-    </footer>
 
 </body> 
 </html> 
