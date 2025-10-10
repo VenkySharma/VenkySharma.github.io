@@ -6,39 +6,35 @@
 const posts = [
   {
     id: 1,
-    title: 'Designing for Calm: Micro-interactions that Delight',
-    kicker: 'Design · UI',
-    date: '2025-10-01',
-    summary: 'Small motion can make interfaces feel alive. Here are patterns and principles for tasteful micro-interactions that support UX without distracting from it.',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop',
-    content: `<p>Micro-interactions are the little moments where a product communicates its status and responds to the user. They can transform a flat UI into something that feels alive and responsive.</p>
-    <h3>Principles</h3>
-    <ul><li>Purpose first: every animation must have a reason.</li><li>Respect time: keep motion short.</li><li>Prefer transforms over layout changes.</li></ul>
-    <p>Example code snippets (CSS) and demo links can be placed here to let readers try the patterns live.</p>`,
-    external: ''
+    title: 'Docker from scratch and Sample web App',
+    kicker: 'Docker · Web-App',
+    date: '2023-09-23',
+    summary: 'Learn how to create a Docker image from scratch and deploy a simple Flask web application. This guide walks you through writing a Dockerfile, building the image, and running the app in a container, making it easy to deploy web applications efficiently.',
+    image: 'https://images.unsplash.com/photo-1646627927863-19874c27316b?q=80&w=1400&auto=format&fit=crop',
+    content: `<p>Learn how to create a Docker image from scratch and deploy a simple Flask web application. This guide walks you through writing a Dockerfile, building the image, and running the app in a container, making it easy to deploy web applications efficiently.',
+   </p>`,
+    external: "https://medium.com/@venkateshkumar9211/creating-docker-from-scratch-and-deploying-sample-web-app-c6ca3151a5b5"
   },
   {
     id: 2,
-    title: 'Building a Tiny Blog Engine with GitHub Pages',
-    kicker: 'Dev · Static Sites',
-    date: '2025-09-15',
-    summary: 'How to publish a clean blog using GitHub Pages, a single HTML template, and a small JSON file for posts.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop',
-    content: `<p>GitHub Pages + a single HTML template can power a tiny, fast blog. Put this file in your repository and point gh-pages to main branch's docs folder, or use the root.</p>
-    <h3>Deployment</h3>
-    <ol><li>Create repository</li><li>Enable Pages</li><li>Push files</li></ol>
-    <p>This article includes a sample 'posts.json' and build-free approach.</p>`,
-    external: 'https://medium.com/example-article'
+    title: 'Virtualization, Docker and Kubernetes in Google Cloud Platform',
+    kicker: 'Google-Cloud · Container',
+    date: '2023-10-12',
+    summary: 'Explore how Virtualization, Docker, and Kubernetes work together in Google Cloud Platform.',
+    image: 'https://images.unsplash.com/photo-1511296265581-c2450046447d?q=80&w=1400&auto=format&fit=crop',
+    content: `<p>Explore how Virtualization, Docker, and Kubernetes work together in Google Cloud Platform.
+            This blog covers the fundamentals of each technology and 
+            demonstrates how they enable scalable and efficient cloud-native application deployment.</p>`,
+    external: "https://medium.com/@venkateshkumar9211/virtualization-docker-and-kubernetes-in-google-cloud-platform-b0a062939714"
   },
   {
     id: 3,
-    title: 'CSS Grid: Layouts for the Modern Web',
-    kicker: 'CSS · Layout',
-    date: '2025-08-04',
-    summary: 'Grid unlocks powerful responsive layouts. This guide covers subgrid, named lines and real-world recipes for dashboard layouts.',
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop',
-    content: `<p>CSS Grid lets you create two-dimensional layouts with ease. Use named grid areas and template columns to craft semantic layouts.</p>
-    <p>Real examples include media galleries, article layouts, and complex dashboards.</p>`,
+    title: 'ML(Kmeans and GMM)',
+    kicker: 'ML · Basics',
+    date: '2023-08-18',
+    summary: 'Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.',
+    image: 'https://images.unsplash.com/photo-1526925539332-aa3b66e35444?q=80&w=1400&auto=format&fit=crop',
+    content: `<p>Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.</p>`,
     external: ''
   }
 ];
