@@ -185,10 +185,19 @@ body {
 }
 
 .btn-box:hover {
-    box-shadow: 0 0 5px green,
-    0 0 25px green, 0 0 50px green,
-    0 0 100px green, 0 0 200px green;
+  box-shadow: 0 0 15px var(--accent),
+              0 0 30px var(--accent),
+              0 0 45px var(--accent);
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
+.home-sci a:hover {
+  background: var(--accent);
+  color: black;
+  box-shadow: var(--shadow-green);
+  transform: scale(1.1);
+}
+
 
 .home-img {
     width: 410px;
@@ -315,11 +324,29 @@ canvas {
 
 /* Footer */
 footer {
-  opacity: 0.8;
-  transition: opacity 0.3s;
+  margin-top: 50px;
+  text-align: center;
+  color: var(--accent);
+  background: var(--glass-light);
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(50,205,50,0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
 }
 footer:hover {
   opacity: 1;
+  transform: translateY(-2px);
+}
+
+section {
+  background: var(--glass-dark);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px auto;
+  box-shadow: var(--shadow-green);
+  backdrop-filter: blur(15px);
+  animation: fadeIn 1s ease forwards;
 }
 
 
@@ -404,3 +431,6 @@ footer:hover {
       opacity: 1;
     }
   }
+html {
+  scroll-behavior: smooth;
+}
