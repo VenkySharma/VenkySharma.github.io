@@ -12,20 +12,31 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: transparent;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.548), green, rgba(0, 0, 0, 0.548));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    /* border-radius: 100px; */
+:root {
+  --accent: #32cd32;
+  --glass-dark: rgba(50, 205, 50, 0.05);
+  --glass-light: rgba(255, 255, 255, 0.05);
+  --shadow-green: 0 0 20px rgba(50, 205, 50, 0.3);
 }
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 10%;
+  background: var(--glass-light);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
 
 .logo {
     font-size: 25px;
@@ -72,6 +83,13 @@ body {
     background-clip: border-box;
     -webkit-background-clip: text;
 }
+.navbar a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
 
 .home {
     width: 100%;
