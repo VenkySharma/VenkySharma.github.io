@@ -44,8 +44,8 @@ body {
 
 .logo {
     font-size: 25px;
-    color: green;
-    text-shadow: 5px 5px 10px black;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent);
     text-decoration: none;
     font-weight: 600;
     pointer-events: none;
@@ -81,12 +81,6 @@ body {
     width: 100%;
 }
 
-.navbar a:hover {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
-    -webkit-text-fill-color: transparent;
-    background-clip: border-box;
-    -webkit-background-clip: text;
-}
 .navbar a:hover {
   color: var(--accent);
   text-shadow: 0 0 10px var(--accent);
@@ -170,16 +164,17 @@ body {
 .home-sci a:hover {
     background: green;
     color: black;
-    box-shadow: 0 0 20px green;
+    box-shadow: var(--shadow-accent);
+
 }
 
 .btn-box {
     display: inline-block;
     padding: 12px 28px;
-    background: green;
+    background: var(--accent);
     border-radius: 40px;
     font-size: 16px;
-    color: black;
+    color: var(--bg);
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
