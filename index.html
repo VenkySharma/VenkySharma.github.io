@@ -88,30 +88,30 @@ document.addEventListener('DOMContentLoaded', function () {
   const countGetUrl = 'https://api.counterapi.dev/v2/dev-venky/count-venky-01';
   const visitorElement = document.getElementById('visitorCount');
 
-  // Function to update display
-  function updateCount(url, increment = false) {
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const count = data?.data?.up_count ?? data?.data?.count;
-        if (count !== undefined) {
-          visitorElement.textContent = count;
-        } else {
-          visitorElement.textContent = 'N/A';
-        }
-      })
-      .catch(err => {
-        console.error('Visitor count failed:', err);
-        visitorElement.textContent = 'N/A';
-      });
+  async function updateCount(url) {
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      const data = await res.json();
+      const count = data?.data?.up_count ?? data?.data?.count ?? 'N/A';
+      visitorElement.textContent = count;
+    } catch (err) {
+      console.error('Visitor count failed:', err);
+      visitorElement.textContent = 'N/A';
+    }
   }
 
-  // Check if this is the first visit in the session
-  if (!sessionStorage.getItem('visited')) {
-    updateCount(countUpUrl, true); // increment once
-    sessionStorage.setItem('visited', 'true');
+  // --- Ensure we only increment ONCE per session ---
+  const hasVisited = sessionStorage.getItem('visited');
+  const isUpdating = sessionStorage.getItem('updating'); // to prevent race/double calls
+
+  if (!hasVisited && !isUpdating) {
+    sessionStorage.setItem('updating', 'true'); // temporary lock
+    updateCount(countUpUrl).then(() => {
+      sessionStorage.setItem('visited', 'true');
+      sessionStorage.removeItem('updating');
+    });
   } else {
-    updateCount(countGetUrl); // just fetch without incrementing
+    updateCount(countGetUrl);
   }
 });
 </script>
