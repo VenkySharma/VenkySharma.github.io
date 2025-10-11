@@ -13,12 +13,6 @@ body {
 }
 
 :root {
-  --accent: #32cd32;
-  --glass-dark: rgba(50, 205, 50, 0.05);
-  --glass-light: rgba(255, 255, 255, 0.05);
-  --shadow-green: 0 0 20px rgba(50, 205, 50, 0.3);
-}
-:root {
   --bg: #121212;
   --card: rgba(255,255,255,0.03);
   --muted: #999999;
