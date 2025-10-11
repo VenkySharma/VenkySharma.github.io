@@ -18,6 +18,16 @@ body {
   --glass-light: rgba(255, 255, 255, 0.05);
   --shadow-green: 0 0 20px rgba(50, 205, 50, 0.3);
 }
+:root {
+  --bg: #121212;
+  --card: rgba(255,255,255,0.03);
+  --muted: #999999;
+  --accent: #b0b0b0;
+  --glass: rgba(255,255,255,0.05);
+  --glass-2: rgba(255,255,255,0.02);
+  --shadow-accent: 0 0 20px rgba(255,255,255,0.1);
+}
+
 
 
 .header {
