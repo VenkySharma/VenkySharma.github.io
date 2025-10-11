@@ -86,22 +86,37 @@
         <script> // === Visitor Counter ===
         // === Global Visitor Counter using CounterAPI v2 ===
         src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"
-        document.addEventListener('DOMContentLoaded', function () {
-          // Replace with your workspace name (any unique string)
-          const counter = new Counter({ workspace: 'https://venkysharma.github.io' });
 
-          // Increment the counter each time the page is visited
-          counter.up('global-visits')
-            .then(result => {
-              document.getElementById('visitorCount').textContent = result.value;
-            })
-            .catch(error => {
-              console.error('Error tracking visitor count:', error);
-              document.getElementById('visitorCount').textContent = 'N/A';
-            });
-        });
+            const counter = new Counter({ 
+    workspace: 'dev-venky' // Replace with your workspace name
+  });
 
+  // Optional configuration
+  const counterWithOptions = new Counter({
+    workspace: 'dev-venky',
+    debug: true,              // Enable debug mode for logging
+    timeout: 8000,            // Set request timeout to 8 seconds
+    accessToken: '${{ secrets.API_TOKEN }}' // Optional: Authentication token for API requests (V2 API only)
+  });
     </script>
+
+    <div>Page Views: <span id="view-count">Loading...</span></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const counter = new Counter({ workspace: 'venkysharma.github.io' });
+
+    // Increment the view count when the page loads
+    counter.up('page-views')
+      .then(result => {
+        document.getElementById('view-count').textContent = result.value;
+      })
+      .catch(error => {
+        console.error('Error tracking page view:', error);
+        document.getElementById('view-count').textContent = 'Error loading count';
+      });
+  });
+</script>
 
 </body> 
 </html> 
