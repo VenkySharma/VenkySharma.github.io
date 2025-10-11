@@ -83,30 +83,39 @@
           👀 Visitors: <span id="visitorCount">Loading...</span>
     </footer>
     <script>
-        // === Global Visitor Counter using CounterAPI (No Backend Needed) ===
 document.addEventListener('DOMContentLoaded', function () {
   const countUpUrl = 'https://api.counterapi.dev/v2/dev-venky/count-venky-01/up';
   const countGetUrl = 'https://api.counterapi.dev/v2/dev-venky/count-venky-01';
+  const visitorElement = document.getElementById('visitorCount');
 
-  // Increment counter and update display
-  fetch(countUpUrl)
-    .then(res => res.json())
-    .then(data => {
-      if (data && data.data && data.data.up_count !== undefined) {
-        document.getElementById('visitorCount').textContent = data.data.up_count;
-      } else {
-        // fallback: just fetch count if "up" didn’t return expected format
-        return fetch(countGetUrl)
-          .then(r => r.json())
-          .then(d => document.getElementById('visitorCount').textContent = d.data.up_count);
-      }
-    })
-    .catch(err => {
-      console.error('Visitor count failed:', err);
-      document.getElementById('visitorCount').textContent = 'N/A';
-    });
+  // Function to update display
+  function updateCount(url, increment = false) {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const count = data?.data?.up_count ?? data?.data?.count;
+        if (count !== undefined) {
+          visitorElement.textContent = count;
+        } else {
+          visitorElement.textContent = 'N/A';
+        }
+      })
+      .catch(err => {
+        console.error('Visitor count failed:', err);
+        visitorElement.textContent = 'N/A';
+      });
+  }
+
+  // Check if this is the first visit in the session
+  if (!sessionStorage.getItem('visited')) {
+    updateCount(countUpUrl, true); // increment once
+    sessionStorage.setItem('visited', 'true');
+  } else {
+    updateCount(countGetUrl); // just fetch without incrementing
+  }
 });
 </script>
+
 
 </body> 
 </html> 
