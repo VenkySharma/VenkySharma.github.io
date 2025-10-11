@@ -82,40 +82,30 @@
     <footer style="text-align:center; margin-top:40px; color:var(--muted); font-size:14px;">
           👀 Visitors: <span id="visitorCount">Loading...</span>
     </footer>
+    <script>
+        // === Global Visitor Counter using CounterAPI (No Backend Needed) ===
+document.addEventListener('DOMContentLoaded', function () {
+  const countUpUrl = 'https://api.counterapi.dev/v2/dev-venky/count-venky-01/up';
+  const countGetUrl = 'https://api.counterapi.dev/v2/dev-venky/count-venky-01';
 
-        <script> // === Visitor Counter ===
-        // === Global Visitor Counter using CounterAPI v2 ===
-        src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"
-
-            const counter = new Counter({ 
-    workspace: 'dev-venky' // Replace with your workspace name
-  });
-
-  // Optional configuration
-  const counterWithOptions = new Counter({
-    workspace: 'dev-venky',
-    debug: true,              // Enable debug mode for logging
-    timeout: 8000,            // Set request timeout to 8 seconds
-    accessToken: '${{ secrets.API_TOKEN }}' // Optional: Authentication token for API requests (V2 API only)
-  });
-    </script>
-
-    <div>Page Views: <span id="view-count">Loading...</span></div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const counter = new Counter({ workspace: 'venkysharma.github.io' });
-
-    // Increment the view count when the page loads
-    counter.up('page-views')
-      .then(result => {
-        document.getElementById('view-count').textContent = result.value;
-      })
-      .catch(error => {
-        console.error('Error tracking page view:', error);
-        document.getElementById('view-count').textContent = 'Error loading count';
-      });
-  });
+  // Increment counter and update display
+  fetch(countUpUrl)
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.data && data.data.up_count !== undefined) {
+        document.getElementById('visitorCount').textContent = data.data.up_count;
+      } else {
+        // fallback: just fetch count if "up" didn’t return expected format
+        return fetch(countGetUrl)
+          .then(r => r.json())
+          .then(d => document.getElementById('visitorCount').textContent = d.data.up_count);
+      }
+    })
+    .catch(err => {
+      console.error('Visitor count failed:', err);
+      document.getElementById('visitorCount').textContent = 'N/A';
+    });
+});
 </script>
 
 </body> 
