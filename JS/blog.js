@@ -37,6 +37,113 @@ const posts = [
     content: `<p>Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.</p>`,
     external: '/Html/Blogs/ML/Assignment2/m23cse028_report.html'
   }
+
+   {
+    id: 4,
+    title: 'Diffusion Models and Stories',
+    kicker: 'Diffusion models · Image Synthesis',
+    date: '2025-10-13',
+    summary: 'What are diffusion models, ideas behind it.',
+    image: 'https://images.unsplash.com/photo-1608054361605-1bfd5a2b31c7?q=80&w=1400&auto=format&fit=crop',
+    content: `<p>Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.</p>
+  
+  # Diffusion Models Explained (Simple Version)
+
+## 🧠 What Are Diffusion Models?
+Diffusion models are like **digital artists**. They start with random noise and gradually turn it into a clear and meaningful image, sound, or video.
+
+Think of it as a computer learning how to **undo chaos** — step by step, it removes the noise until a beautiful picture appears.
+
+---
+
+## 🎨 Simple Analogies
+
+### 1. The Careful Painter
+An artist starts by splashing random paint on a canvas and slowly refines it until a painting appears.  
+➡️ A diffusion model does the same but with pixels — starting from random noise and improving it step by step.
+
+### 2. The Photo Restorer
+Imagine restoring an old photo full of scratches.  
+A diffusion model learns to remove the "scratches" (noise) to make the image clear again.
+
+### 3. The Music From Static
+It’s like turning radio static into real music by learning what patterns make sense.
+
+---
+
+## 🚀 Why Do We Need Diffusion Models?
+Before diffusion models, there were other generative models like **GANs**, **VAEs**, and **Autoregressive Models**.  
+They worked — but each had problems:
+
+| Model | What It’s Like | Pros | Cons |
+|-------|----------------|------|------|
+| **GANs** | Two artists competing | Realistic results | Hard to train |
+| **VAEs** | Compressor/Decompressor | Stable | Blurry images |
+| **Autoregressive** | Builds step by step | Detailed | Very slow |
+| **Diffusion** | Patient restorer | Sharp, stable, flexible | Slow but improving |
+
+So, diffusion models were created because we needed something that was:
+✅ Stable  
+✅ High-quality  
+✅ Creative  
+✅ Easy to train  
+
+---
+
+## 🌍 Where Are Diffusion Models Used?
+
+### 🖼️ 1. Image Creation
+Create new pictures from text prompts.  
+Example: “A panda surfing on a rainbow.”  
+Used in **DALL·E**, **Midjourney**, and **Stable Diffusion**.
+
+### 🧑‍🎨 2. Image Editing
+Fix, recolor, or stylize existing pictures.  
+Used for photo restoration and movie editing.
+
+### 🎬 3. Video & Animation
+Turn descriptions into moving scenes.  
+Used in animation and film previsualization.
+
+### 🔊 4. Audio & Music
+Generate music or realistic sound effects.  
+Example: “Soft piano with ocean waves.”
+
+### 🧬 5. Science & Medicine
+Used for drug discovery, molecule design, and enhancing medical images like MRI or CT scans.
+
+### 💼 6. Business & Design
+Generate product concepts, fashion designs, or marketing visuals automatically.
+
+### ⏰ 7. Prediction Tasks
+Predict trends (like stock prices or weather) by learning from noisy data patterns.
+
+---
+
+## 🧩 Summary
+
+| Feature | Why It Matters |
+|----------|----------------|
+| **Stability** | Easier to train than GANs |
+| **Quality** | Produces photo-realistic images |
+| **Control** | Responds to text, sketches, or conditions |
+| **Versatility** | Works for images, videos, sound, and 3D models |
+| **Creativity** | Every generation can be unique |
+
+---
+
+## ✨ In Simple Words
+> Diffusion models are like calm, patient artists — they start with random noise and carefully reveal beauty hidden inside it.
+
+---
+
+**References:**
+- Lilian Weng, *“What Are Diffusion Models?”* (2021) — [Blog Post](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
+- Ho et al., *“Denoising Diffusion Probabilistic Models”*, NeurIPS 2020.
+- Yang et al., *“Diffusion Models: A Comprehensive Survey”*, 2022.`,
+        external: ''
+  }
+
 ];
 
 // Elements
