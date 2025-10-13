@@ -36,7 +36,7 @@ const posts = [
     image: 'https://images.unsplash.com/photo-1526925539332-aa3b66e35444?q=80&w=1400&auto=format&fit=crop',
     content: `<p>Performing Kmeans using Cosine Similarity and Gmm on MNIST dataset.</p>`,
     external: '/Html/Blogs/ML/Assignment2/m23cse028_report.html'
-  }
+  },
 
    {
     id: 4,
@@ -142,7 +142,7 @@ Predict trends (like stock prices or weather) by learning from noisy data patter
 - Ho et al., *“Denoising Diffusion Probabilistic Models”*, NeurIPS 2020.
 - Yang et al., *“Diffusion Models: A Comprehensive Survey”*, 2022.`,
         external: ''
-  }
+  },
 
 ];
 
