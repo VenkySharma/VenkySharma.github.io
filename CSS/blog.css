@@ -23,7 +23,7 @@ body {
   gap: 24px;
 
   /* background image */
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d'); /* <-- adjust path */
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1450849608880-6f787542c88a'); /* <-- adjust path */
   background-size: cover;        /* fill screen */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;  /* no tiling */
