@@ -16,31 +16,8 @@
 *{box-sizing:border-box}
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
 }
 
-/* Parallax background layer */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.25)),
-              url('https://images.unsplash.com/photo-1450849608880-6f787542c88a') center/cover no-repeat;
-  z-index: -1;
-  transform: translateY(0);
-  will-change: transform;
-}
-
-/* Scroll snapping */
-html {
-  scroll-snap-type: y mandatory;
-}
-
-section, main, aside {
-  scroll-snap-align: start;
-}
 
 body {
   margin: 0;
