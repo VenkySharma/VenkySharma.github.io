@@ -174,48 +174,7 @@ generatePopularTags();
   if (m) openInModal(parseInt(m[1], 10));
 })();
 
-// ============================
-// Smooth Parallax + ScrollTrigger + Snap Scroll
-// ============================
-gsap.registerPlugin(ScrollTrigger);
 
-// Create a dynamic CSS variable for background offset
-document.body.style.setProperty("--parallax-offset", "0px");
 
-// Inject style dynamically to move background layer
-const style = document.createElement("style");
-style.innerHTML = `
-  body::before {
-    transform: translateY(var(--parallax-offset));
-    transition: transform 0.1s linear;
-  }
-`;
-document.head.appendChild(style);
 
-// Parallax animation using GSAP ScrollTrigger
-gsap.to("body", {
-  scrollTrigger: {
-    trigger: document.body,
-    start: "top top",
-    end: "bottom bottom",
-    scrub: true,
-  },
-  onUpdate: (self) => {
-    const progress = self.progress;
-    const parallaxAmount = progress * -150; // background moves slower than scroll
-    document.body.style.setProperty("--parallax-offset", `${parallaxAmount}px`);
-  },
-});
 
-// Smooth snapping between sections
-ScrollTrigger.create({
-  trigger: "main",
-  start: "top top",
-  end: "bottom bottom",
-  snap: {
-    snapTo: 1 / 4,
-    duration: 0.5,
-    delay: 0,
-    ease: "power1.inOut",
-  },
-});
