@@ -27,6 +27,8 @@ body {
   background-size: cover;        /* fill screen */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;  /* no tiling */
+  background-attachment: scroll;
+
   color: #c0ffc0;
 }
 
