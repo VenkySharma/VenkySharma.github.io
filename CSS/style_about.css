@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body {
+/*body {
   font-family: "Poppins", sans-serif;
   color: #fff;
   background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #000);
@@ -14,7 +14,40 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+}*/
+/* ===== About Page Background ===== */
+body.about-page {
+  position: relative;
+  min-height: 100vh;
+  color: #fff; /* default text color for readability */
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1400&auto=format&fit=crop')
+              center/cover no-repeat fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  transition: background 0.5s ease;
 }
+
+/* Optional: subtle scroll animation */
+body.about-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: -1;
+  transition: background-color 0.4s ease;
+}
+
+/* Add contrast and smooth text shadow */
+.about-page h1, 
+.about-page p, 
+.about-page a, 
+.about-page strong {
+  color: #f1f1f1;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
 
 /* Particle Background */
 #particle-bg {
