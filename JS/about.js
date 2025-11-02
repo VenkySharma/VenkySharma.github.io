@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("About page loaded with particle background.");
 
-  // Canvas particle background
+  // ==========================
+  // 🎇 Particle Background
+  // ==========================
   const canvas = document.getElementById("particle-bg");
   const ctx = canvas.getContext("2d");
 
@@ -70,4 +72,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   drawParticles();
+
+  // ==========================
+  // 📄 Dynamic Content Loader
+  // ==========================
+
+  const contentBox = document.getElementById("dynamic-content");
+  const dropdownLinks = document.querySelectorAll(".dropdown-content a");
+
+  if (!contentBox || dropdownLinks.length === 0) return;
+
+  const contentMap = {
+    "Favorite Articles": `
+      <h2>📚 Favorite Articles</h2>
+      <ul>
+        <li><a href="#" target="_blank">Understanding XSS Attacks</a></li>
+        <li><a href="#" target="_blank">OWASP Top 10 Explained</a></li>
+        <li><a href="#" target="_blank">Building a Secure Web App</a></li>
+      </ul>
+    `,
+    "Dev Tools": `
+      <h2>🧰 Developer Tools I Use</h2>
+      <p>VS Code, Burp Suite, Nmap, Postman, GitHub Copilot, and more.</p>
+    `,
+    "Inspiration Links": `
+      <h2>🌟 Inspiration Links</h2>
+      <p>Communities and mentors that keep me motivated — from HackerOne to indie dev YouTubers!</p>
+    `,
+    "My Latest Video": `
+      <h2>🎬 My Latest Video</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    `,
+    "Coding Tutorials": `
+      <h2>💻 Coding Tutorials</h2>
+      <p>Practical cybersecurity & web dev tutorials — coming soon!</p>
+    `,
+    "Journey in Web Dev": `
+      <h2>🚀 My Journey in Web Development</h2>
+      <p>I started with HTML & CSS, fell in love with JS, and later found my true interest in Web Security.</p>
+    `,
+    "Portfolio 2.0 Launch": `
+      <h2>⚡ Portfolio 2.0 Launch</h2>
+      <p>Major redesign with animations, modular JS, and accessibility improvements. 🚀</p>
+    `
+  };
+
+  dropdownLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const text = e.target.textContent.trim();
+      const newContent = contentMap[text];
+
+      if (newContent) {
+        contentBox.classList.remove("hidden");
+        contentBox.style.opacity = 0;
+        setTimeout(() => {
+          contentBox.innerHTML = newContent;
+          contentBox.style.opacity = 1;
+        }, 150);
+      } else {
+        contentBox.innerHTML = `<p>Content coming soon... 🚧</p>`;
+        contentBox.classList.remove("hidden");
+      }
+    });
+  });
 });
