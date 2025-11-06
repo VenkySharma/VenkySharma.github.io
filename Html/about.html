@@ -15,8 +15,7 @@
   <link rel="icon" href="/favicon.ico">
 </head>
 
-<!-- body -->
-  <body class="about-page">
+<body class="about-page">
 
   <!-- Particle Background Canvas -->
   <canvas id="particle-bg"></canvas>
@@ -36,39 +35,42 @@
     <div class="dropdown">
       <button class="dropbtn">📑 Bookmarks</button>
       <div class="dropdown-content">
-        <a href="#">Favorite Articles</a>
-        <a href="#">Dev Tools</a>
-        <a href="#">Inspiration Links</a>
+        <a href="#bookmarks">Favorite Articles</a>
+        <a href="#bookmarks">Dev Tools</a>
+        <a href="#bookmarks">Inspiration Links</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="dropbtn">🎥 YouTube</button>
       <div class="dropdown-content">
-        <a href="#">My Latest Video</a>
-        <a href="#">Coding Tutorials</a>
-        <a href="#">Vlogs</a>
+        <a href="#youtube">My Latest Video</a>
+        <a href="#youtube">Coding Tutorials</a>
+        <a href="#youtube">Vlogs</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="dropbtn">📖 Stories</button>
       <div class="dropdown-content">
-        <a href="#">Journey in Web Dev</a>
-        <a href="#">Learning Path</a>
-        <a href="#">Side Projects</a>
+        <a href="#stories">Journey in Web Dev</a>
+        <a href="#stories">Learning Path</a>
+        <a href="#stories">Side Projects</a>
       </div>
     </div>
+
     <div class="dropdown">
       <button class="dropbtn">🚀 Updates</button>
       <div class="dropdown-content">
-        <a href="#">Portfolio 2.0 Launch</a>
-        <a href="#">New Blog Post</a>
-        <a href="#">Upcoming Events</a>
+        <a href="#updates">Portfolio 2.0 Launch</a>
+        <a href="#updates">New Blog Post</a>
+        <a href="#updates">Upcoming Events</a>
       </div>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <section class="content">
+  <!-- About Section -->
+  <section id="about" class="content">
     <h1>About Me</h1>
     <p>
       Hi, I’m <strong>Venky</strong> — not a naturally talented person, but deeply passionate about <strong>Cybersecurity</strong>, whether it’s Network or Application security.
@@ -78,10 +80,46 @@
       On this page, you can explore my favorite bookmarks, recent YouTube uploads, personal stories, and updates.
     </p>
     <p>Thank you for visiting! 🙏</p>
-    <!-- Dynamic content area -->
-  <div id="dynamic-content" class="hidden">
-    <!-- JS will inject content here -->
-  </div>
+  </section>
+
+  <!-- Bookmarks Section -->
+  <section id="bookmarks" class="section-bookmarks">
+    <h2>📑 Bookmarks</h2>
+    <ul>
+      <li>Favorite Articles</li>
+      <li>Dev Tools</li>
+      <li>Inspiration Links</li>
+    </ul>
+  </section>
+
+  <!-- YouTube Section -->
+  <section id="youtube" class="section-youtube">
+    <h2>🎥 YouTube</h2>
+    <ul>
+      <li>My Latest Video</li>
+      <li>Coding Tutorials</li>
+      <li>Vlogs</li>
+    </ul>
+  </section>
+
+  <!-- Stories Section -->
+  <section id="stories" class="section-stories">
+    <h2>📖 Stories</h2>
+    <ul>
+      <li>Journey in Web Dev</li>
+      <li>Learning Path</li>
+      <li>Side Projects</li>
+    </ul>
+  </section>
+
+  <!-- Updates Section -->
+  <section id="updates" class="section-updates">
+    <h2>🚀 Updates</h2>
+    <ul>
+      <li>Portfolio 2.0 Launch</li>
+      <li>New Blog Post</li>
+      <li>Upcoming Events</li>
+    </ul>
   </section>
 
   <footer>
@@ -90,5 +128,6 @@
 
   <!-- JS File -->
   <script src="/JS/about.js"></script>
+
 </body>
 </html>
