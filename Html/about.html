@@ -4,54 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Venky Sharma</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="/CSS/style_about.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico">
 </head>
 
 <body class="about-page">
-
-  <!-- Particle Background -->
   <canvas id="particle-bg"></canvas>
 
-  <!-- Navigation Bar -->
-  <nav class="main-nav">
+  <!-- Navbar (same as before) -->
+  <nav>
     <div class="logo"><a href="/index.html"><strong>Venky Sharma</strong></a></div>
-    <div class="nav-links">
-      <a href="#" data-section="projects">🚀 Side Projects</a>
-      <a href="#" data-section="articles">📑 Favorite Articles</a>
-      <a href="#" data-section="videos">🎥 YouTube</a>
-      <a href="#" data-section="stories">📖 Stories</a>
-      <a href="#" data-section="updates">✨ Updates</a>
+    <div>
+      <a href="/index.html">🏠 Home</a>
+      <a href="/Html/blogs.html">📝 Blog</a>
       <a href="/Html/contact.html">📬 Contact</a>
     </div>
   </nav>
+
+  <!-- Dropdown Navigation (unchanged) -->
+  <div class="dropdown-nav floating">
+    <div class="dropdown">
+      <button class="dropbtn">📑 Bookmarks</button>
+      <div class="dropdown-content">
+        <a href="#">Favorite Articles</a>
+        <a href="#">Dev Tools</a>
+        <a href="#">Inspiration Links</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">🎥 YouTube</button>
+      <div class="dropdown-content">
+        <a href="#">My Latest Video</a>
+        <a href="#">Coding Tutorials</a>
+        <a href="#">Vlogs</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">📖 Stories</button>
+      <div class="dropdown-content">
+        <a href="#">Journey in Web Dev</a>
+        <a href="#">Learning Path</a>
+        <a href="#">Side Projects</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">🚀 Updates</button>
+      <div class="dropdown-content">
+        <a href="#">Portfolio 2.0 Launch</a>
+        <a href="#">New Blog Post</a>
+        <a href="#">Upcoming Events</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Main Content -->
   <section class="content">
     <h1>About Me</h1>
     <p>
-      Hi, I’m <strong>Venky</strong> — passionate about <strong>Cybersecurity</strong>, 
-      especially Web Application and Network Security. I’ve explored tools such as 
-      <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
+      Hi, I’m <strong>Venky</strong> — a passionate learner in <strong>Cybersecurity</strong> with a growing interest in Web & Network Security.
+      I love exploring tools like <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
       <br><br>
-      This page is my interactive space — explore my projects, favorite articles, YouTube content, 
-      and more. Click on any section in the navbar to discover my journey!
+      Explore my projects, bookmarks, and stories through the dropdowns above!
     </p>
 
-    <!-- Dynamic Section Area -->
+    <!-- Dynamic Content Area -->
     <div id="dynamic-content" class="hidden"></div>
   </section>
 
-  <footer>© 2025 Venky Sharma | Designed with ❤️</footer>
+  <footer>© 2025 Venky Sharma | Designed with ❤️ and curiosity.</footer>
 
-  <!-- Script -->
   <script src="/JS/about.js"></script>
 </body>
 </html>
