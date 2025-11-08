@@ -1,53 +1,26 @@
-/* General Reset */
+/* Reset & Global */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*body {
+body.about-page {
   font-family: "Poppins", sans-serif;
   color: #fff;
-  background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #000);
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #0d1b2a);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  min-height: 100vh;
+  animation: bgShift 15s ease infinite;
   overflow-x: hidden;
   position: relative;
-}*/
-/* ===== About Page Background ===== */
-body.about-page {
-  position: relative;
   min-height: 100vh;
-  color: #fff; /* default text color for readability */
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
-              url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1400&auto=format&fit=crop')
-              center/cover no-repeat fixed;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  transition: background 0.5s ease;
 }
 
-/* Optional: subtle scroll animation */
-body.about-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: -1;
-  transition: background-color 0.4s ease;
+@keyframes bgShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
-
-/* Add contrast and smooth text shadow */
-.about-page h1, 
-.about-page p, 
-.about-page a, 
-.about-page strong {
-  color: #f1f1f1;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
 
 /* Particle Background */
 #particle-bg {
@@ -60,8 +33,8 @@ body.about-page::before {
   background: transparent;
 }
 
-/* Navbar and Dropdown styles remain same */
-nav {
+/* Navbar */
+.main-nav {
   position: sticky;
   top: 0;
   background: rgba(0, 0, 0, 0.8);
@@ -73,83 +46,30 @@ nav {
   z-index: 10;
 }
 
-nav a {
-  color: #fff;
+.main-nav .logo a {
+  color: #00bcd4;
+  font-size: 1.4rem;
+  font-weight: 700;
   text-decoration: none;
-  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #00bcd4;
 }
 
-/* Dropdown Navbar */
-.dropdown-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  gap: 1rem;
-  flex-wrap: wrap;
-  z-index: 5;
-}
-
-/* (rest same as before, unchanged) */
-
-.dropbtn {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 600;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
-}
-
-.dropbtn:hover {
-  background: #00bcd4;
-  transform: translateY(-2px);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: rgba(0,0,0,0.9);
-  border-radius: 10px;
-  min-width: 200px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  z-index: 20;
-}
-
-.dropdown-content a {
-  color: #fff;
-  padding: 10px 15px;
-  display: block;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background: #00bcd4;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  animation: fadeIn 0.3s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
+/* Content */
 .content {
   text-align: center;
   padding: 5rem 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   animation: fadeIn 1s ease-in;
 }
@@ -165,76 +85,104 @@ nav a:hover {
   opacity: 0.9;
 }
 
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-/* ======================================
-   Dynamic Content Area (for About Page)
-   ====================================== */
-
+/* Dynamic Section */
 #dynamic-content {
-  margin-top: 2rem;
-  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  transition: opacity 0.5s ease, transform 0.3s ease;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease;
 }
 
 #dynamic-content.hidden {
   display: none;
 }
 
-#dynamic-content h2 {
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
   color: #00bcd4;
-  margin-bottom: 1rem;
   font-weight: 600;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  margin-bottom: 0.5rem;
 }
 
-#dynamic-content p,
-#dynamic-content ul {
-  color: #e0e0e0;
-  line-height: 1.8;
+.section-header p {
+  color: #ccc;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  animation: fadeUp 0.8s ease;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1rem;
   text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-#dynamic-content ul {
-  list-style: disc;
-  margin-left: 2rem;
+.card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
-#dynamic-content a {
-  color: #00bcd4;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-#dynamic-content a:hover {
-  color: #fff;
-}
-
-#dynamic-content iframe {
+.card img, .card iframe {
   width: 100%;
-  max-width: 560px;
-  height: 315px;
-  border: none;
   border-radius: 10px;
-  margin-top: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: #00bcd4;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #00bcd4;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #008c9e;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
