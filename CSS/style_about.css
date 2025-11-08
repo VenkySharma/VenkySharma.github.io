@@ -1,146 +1,35 @@
-/* Reset & Global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ======================================
+   Modern Dynamic Content Cards
+   ====================================== */
 
-body.about-page {
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b, #0d1b2a);
-  background-size: 400% 400%;
-  animation: bgShift 15s ease infinite;
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-}
-
-@keyframes bgShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Particle Background */
-#particle-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: transparent;
-}
-
-/* Navbar */
-.main-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 10;
-}
-
-.main-nav .logo a {
-  color: #00bcd4;
-  font-size: 1.4rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.nav-links a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00bcd4;
-}
-
-/* Content */
-.content {
-  text-align: center;
-  padding: 5rem 2rem;
-  max-width: 900px;
-  margin: auto;
-  animation: fadeIn 1s ease-in;
-}
-
-.content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  opacity: 0.9;
-}
-
-/* Dynamic Section */
-#dynamic-content {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.5s ease;
-}
-
-#dynamic-content.hidden {
-  display: none;
-}
-
-/* Section Header */
-.section-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.section-header h2 {
-  color: #00bcd4;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.section-header p {
-  color: #ccc;
-}
-
-/* Card Grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  animation: fadeUp 0.8s ease;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 1.5rem;
   text-align: left;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.card img, .card iframe {
+.card img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
+  object-fit: cover;
+  height: 150px;
 }
 
 .card h3 {
@@ -150,39 +39,28 @@ body.about-page {
 
 .card p {
   color: #e0e0e0;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 8px 14px;
+  margin-top: 0.8rem;
   background: #00bcd4;
-  color: #fff;
-  border-radius: 8px;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 20px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-  background: #008c9e;
+  background: #fff;
+  color: #00bcd4;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(40px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
+/* Smooth fade for dynamic content */
+#dynamic-content {
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease;
 }
