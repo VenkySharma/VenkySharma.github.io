@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("About page loaded with particle background.");
+  console.log("About page loaded with interactive design");
 
-  // ==========================
+  // ======================================
   // 🎇 Particle Background
-  // ==========================
+  // ======================================
   const canvas = document.getElementById("particle-bg");
   const ctx = canvas.getContext("2d");
 
@@ -14,11 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
-  // Create particle objects
   for (let i = 0; i < numParticles; i++) {
     particles.push({
       x: Math.random() * canvas.width,
@@ -37,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
       ctx.fill();
     });
-
     connectParticles();
     moveParticles();
     requestAnimationFrame(drawParticles);
@@ -47,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     particles.forEach(p => {
       p.x += p.xSpeed;
       p.y += p.ySpeed;
-
       if (p.x < 0 || p.x > canvas.width) p.xSpeed *= -1;
       if (p.y < 0 || p.y > canvas.height) p.ySpeed *= -1;
     });
@@ -73,67 +69,130 @@ document.addEventListener("DOMContentLoaded", () => {
 
   drawParticles();
 
-  // ==========================
+  // ======================================
   // 📄 Dynamic Content Loader
-  // ==========================
-
+  // ======================================
   const contentBox = document.getElementById("dynamic-content");
-  const dropdownLinks = document.querySelectorAll(".dropdown-content a");
+  const navLinks = document.querySelectorAll(".nav-links a[data-section]");
 
-  if (!contentBox || dropdownLinks.length === 0) return;
-
-  const contentMap = {
-    "Favorite Articles": `
-      <h2>📚 Favorite Articles</h2>
-      <ul>
-        <li><a href="#" target="_blank">Understanding XSS Attacks</a></li>
-        <li><a href="#" target="_blank">OWASP Top 10 Explained</a></li>
-        <li><a href="#" target="_blank">Building a Secure Web App</a></li>
-      </ul>
-    `,
-    "Dev Tools": `
-      <h2>🧰 Developer Tools I Use</h2>
-      <p>VS Code, Burp Suite, Nmap, Postman, GitHub Copilot, and more.</p>
-    `,
-    "Inspiration Links": `
-      <h2>🌟 Inspiration Links</h2>
-      <p>Communities and mentors that keep me motivated — from HackerOne to indie dev YouTubers!</p>
-    `,
-    "My Latest Video": `
-      <h2>🎬 My Latest Video</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    `,
-    "Coding Tutorials": `
-      <h2>💻 Coding Tutorials</h2>
-      <p>Practical cybersecurity & web dev tutorials — coming soon!</p>
-    `,
-    "Journey in Web Dev": `
-      <h2>🚀 My Journey in Web Development</h2>
-      <p>I started with HTML & CSS, fell in love with JS, and later found my true interest in Web Security.</p>
-    `,
-    "Portfolio 2.0 Launch": `
-      <h2>⚡ Portfolio 2.0 Launch</h2>
-      <p>Major redesign with animations, modular JS, and accessibility improvements. 🚀</p>
-    `
-  };
-
-  dropdownLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      const text = e.target.textContent.trim();
-      const newContent = contentMap[text];
-
-      if (newContent) {
-        contentBox.classList.remove("hidden");
-        contentBox.style.opacity = 0;
-        setTimeout(() => {
-          contentBox.innerHTML = newContent;
-          contentBox.style.opacity = 1;
-        }, 150);
-      } else {
-        contentBox.innerHTML = `<p>Content coming soon... 🚧</p>`;
-        contentBox.classList.remove("hidden");
-      }
+      const section = link.getAttribute("data-section");
+      loadSection(section);
     });
   });
+
+  function loadSection(section) {
+    let html = "";
+
+    switch (section) {
+      case "projects":
+        html = `
+          <div class="section-header">
+            <h2>🚀 My Side Projects</h2>
+            <p>Here are some of the projects I've been working on recently.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <img src="/images/project1-thumbnail.jpg" alt="Project 1">
+              <h3>Portfolio Website</h3>
+              <p>A sleek portfolio website showcasing my cybersecurity journey and technical blogs.</p>
+              <a href="/Html/project1.html" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+              <img src="/images/project2-thumbnail.jpg" alt="Project 2">
+              <h3>Web Vulnerability Scanner</h3>
+              <p>A Python-based scanner that detects common web vulnerabilities and reports them in real time.</p>
+              <a href="/Html/project2.html" class="btn">Learn More</a>
+            </div>
+          </div>
+        `;
+        break;
+
+      case "articles":
+        html = `
+          <div class="section-header">
+            <h2>📑 Favorite Articles</h2>
+            <p>Some cybersecurity articles that shaped my learning.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Understanding XSS Attacks</h3>
+              <p>A practical guide to Cross-Site Scripting vulnerabilities and how to prevent them.</p>
+              <a href="/Html/article1.html" class="btn">Read More</a>
+            </div>
+            <div class="card">
+              <h3>OWASP Top 10 Explained</h3>
+              <p>An overview of the top web application security risks and real-world mitigation steps.</p>
+              <a href="/Html/article2.html" class="btn">Read More</a>
+            </div>
+          </div>
+        `;
+        break;
+
+      case "videos":
+        html = `
+          <div class="section-header">
+            <h2>🎥 YouTube</h2>
+            <p>My latest videos and cybersecurity tutorials.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+              <h3>How I Built My Portfolio Website</h3>
+              <p>A walkthrough of my web dev setup and design process.</p>
+            </div>
+          </div>
+        `;
+        break;
+
+      case "stories":
+        html = `
+          <div class="section-header">
+            <h2>📖 My Journey</h2>
+            <p>Snapshots of how I grew in web development and cybersecurity.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <h3>From Web Dev to Security</h3>
+              <p>Started with frontend, then moved toward understanding how to secure what I build.</p>
+            </div>
+            <div class="card">
+              <h3>First Capture the Flag</h3>
+              <p>My first CTF was a turning point — it sparked my love for ethical hacking.</p>
+            </div>
+          </div>
+        `;
+        break;
+
+      case "updates":
+        html = `
+          <div class="section-header">
+            <h2>✨ Updates</h2>
+            <p>What’s new and what’s coming next.</p>
+          </div>
+          <div class="card-grid">
+            <div class="card">
+              <h3>Portfolio 2.0 Launch</h3>
+              <p>New animations, cleaner design, and dynamic sections — you’re looking at it now!</p>
+            </div>
+            <div class="card">
+              <h3>Upcoming: Blog Integration</h3>
+              <p>Next step — integrating a live blog feed with Markdown support.</p>
+            </div>
+          </div>
+        `;
+        break;
+    }
+
+    // Animate section load
+    contentBox.classList.remove("hidden");
+    contentBox.style.opacity = 0;
+    setTimeout(() => {
+      contentBox.innerHTML = html;
+      contentBox.style.opacity = 1;
+      contentBox.scrollIntoView({ behavior: "smooth" });
+    }, 200);
+  }
 });
