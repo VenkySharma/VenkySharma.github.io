@@ -7,133 +7,51 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- CSS File -->
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/CSS/style_about.css">
 
-  <!-- Favicon (optional) -->
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico">
 </head>
 
 <body class="about-page">
 
-  <!-- Particle Background Canvas -->
+  <!-- Particle Background -->
   <canvas id="particle-bg"></canvas>
 
-  <!-- Main Navbar -->
-  <nav>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
     <div class="logo"><a href="/index.html"><strong>Venky Sharma</strong></a></div>
-    <div>
-      <a href="/index.html">🏠 Home</a>
-      <a href="/Html/blogs.html">📝 Blog</a>
+    <div class="nav-links">
+      <a href="#" data-section="projects">🚀 Side Projects</a>
+      <a href="#" data-section="articles">📑 Favorite Articles</a>
+      <a href="#" data-section="videos">🎥 YouTube</a>
+      <a href="#" data-section="stories">📖 Stories</a>
+      <a href="#" data-section="updates">✨ Updates</a>
       <a href="/Html/contact.html">📬 Contact</a>
     </div>
   </nav>
 
-  <!-- Dropdown Navigation -->
-  <div class="dropdown-nav floating">
-    <div class="dropdown">
-      <button class="dropbtn">📑 Bookmarks</button>
-      <div class="dropdown-content">
-        <a href="#bookmarks">Favorite Articles</a>
-        <a href="#bookmarks">Dev Tools</a>
-        <a href="#bookmarks">Inspiration Links</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">🎥 YouTube</button>
-      <div class="dropdown-content">
-        <a href="#youtube">My Latest Video</a>
-        <a href="#youtube">Coding Tutorials</a>
-        <a href="#youtube">Vlogs</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">📖 Stories</button>
-      <div class="dropdown-content">
-        <a href="#stories">Journey in Web Dev</a>
-        <a href="#stories">Learning Path</a>
-        <a href="#stories">Side Projects</a>
-      </div>
-    </div>
-
-    <div class="dropdown">
-      <button class="dropbtn">🚀 Updates</button>
-      <div class="dropdown-content">
-        <a href="#updates">Updates for my supervisor!</a>
-        <a href="#updates">New Blog Post</a>
-        <a href="#updates">Upcoming Events</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <section id="about" class="content">
+  <!-- Main Content -->
+  <section class="content">
     <h1>About Me</h1>
     <p>
-      Hi, I’m <strong>Venky</strong> — not a naturally talented person, but deeply passionate about <strong>Cybersecurity</strong>, whether it’s Network or Application security.
-      I have beginner to intermediate experience in Web Application Security and have also explored Network Security along with tools such as <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
+      Hi, I’m <strong>Venky</strong> — passionate about <strong>Cybersecurity</strong>, 
+      especially Web Application and Network Security. I’ve explored tools such as 
+      <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
       <br><br>
-      Feel free to explore my projects and get in touch with me for any inquiries or collaborations.
-      On this page, you can explore my favorite bookmarks, recent YouTube uploads, personal stories, and updates.
+      This page is my interactive space — explore my projects, favorite articles, YouTube content, 
+      and more. Click on any section in the navbar to discover my journey!
     </p>
-    <p>Thank you for visiting! 🙏</p>
+
+    <!-- Dynamic Section Area -->
+    <div id="dynamic-content" class="hidden"></div>
   </section>
 
-  <!-- Bookmarks Section -->
-  <section id="bookmarks" class="section-bookmarks">
-    <h2>📑 Bookmarks</h2>
-    <ul>
-      <li>Favorite Articles</li>
-      <li>Dev Tools</li>
-      <li>Inspiration Links</li>
-    </ul>
-  </section>
+  <footer>© 2025 Venky Sharma | Designed with ❤️</footer>
 
-  <!-- YouTube Section -->
-  <section id="youtube" class="section-youtube">
-    <h2>🎥 YouTube</h2>
-    <ul>
-      <li>My Latest Video</li>
-      <li>Coding Tutorials</li>
-      <li>Vlogs</li>
-    </ul>
-  </section>
-
-  <!-- Stories Section -->
-  <section id="stories" class="section-stories">
-    <h2>📖 Stories</h2>
-    <ul>
-      <li>Journey in Cyber Security</li>
-      <li>Learning Path</li>
-      <li>
-        Side Projects 
-        <ul class="project-links">
-        <li><a href="about/project1.html" target="_blank">🚔 Bihar Police FIR Data Analysis</a></li>
-        <li><a href="about/project2.html" target="_blank">💡 [Your Second Project Title]</a></li>
-      </ul>
-      </li>
-    </ul>
-  </section>
-
-  <!-- Updates Section -->
-  <section id="updates" class="section-updates">
-    <h2>🚀 Updates</h2>
-    <ul>
-      <li>A week in my research...</li>
-      <li>New Blog Post</li>
-      <li>Upcoming Events </li>
-    </ul>
-  </section>
-
-  <footer>
-    © 2025 Venky Sharma | Designed with ❤️ and ...
-  </footer>
-
-  <!-- JS File -->
+  <!-- Script -->
   <script src="/JS/about.js"></script>
-
 </body>
 </html>
