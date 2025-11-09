@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Venky Sharma</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS File -->
   <link rel="stylesheet" href="/CSS/style_about.css">
+
+  <!-- Favicon (optional) -->
   <link rel="icon" href="/favicon.ico">
 </head>
 
-<body class="about-page">
+<!-- body -->
+  <body class="about-page">
+
+  <!-- Particle Background Canvas -->
   <canvas id="particle-bg"></canvas>
 
-  <!-- Navbar (same as before) -->
+  <!-- Main Navbar -->
   <nav>
     <div class="logo"><a href="/index.html"><strong>Venky Sharma</strong></a></div>
     <div>
@@ -22,7 +31,7 @@
     </div>
   </nav>
 
-  <!-- Dropdown Navigation (unchanged) -->
+  <!-- Dropdown Navigation -->
   <div class="dropdown-nav floating">
     <div class="dropdown">
       <button class="dropbtn">📑 Bookmarks</button>
@@ -32,7 +41,6 @@
         <a href="#">Inspiration Links</a>
       </div>
     </div>
-
     <div class="dropdown">
       <button class="dropbtn">🎥 YouTube</button>
       <div class="dropdown-content">
@@ -41,7 +49,6 @@
         <a href="#">Vlogs</a>
       </div>
     </div>
-
     <div class="dropdown">
       <button class="dropbtn">📖 Stories</button>
       <div class="dropdown-content">
@@ -50,7 +57,6 @@
         <a href="#">Side Projects</a>
       </div>
     </div>
-
     <div class="dropdown">
       <button class="dropbtn">🚀 Updates</button>
       <div class="dropdown-content">
@@ -65,18 +71,24 @@
   <section class="content">
     <h1>About Me</h1>
     <p>
-      Hi, I’m <strong>Venky</strong> — a passionate learner in <strong>Cybersecurity</strong> with a growing interest in Web & Network Security.
-      I love exploring tools like <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
+      Hi, I’m <strong>Venky</strong> — not a naturally talented person, but deeply passionate about <strong>Cybersecurity</strong>, whether it’s Network or Application security.
+      I have beginner to intermediate experience in Web Application Security and have also explored Network Security along with tools such as <strong>Nmap</strong>, <strong>Burp Suite</strong>, and <strong>Metasploit</strong>.
       <br><br>
-      Explore my projects, bookmarks, and stories through the dropdowns above!
+      Feel free to explore my projects and get in touch with me for any inquiries or collaborations.
+      On this page, you can explore my favorite bookmarks, recent YouTube uploads, personal stories, and updates.
     </p>
-
-    <!-- Dynamic Content Area -->
-    <div id="dynamic-content" class="hidden"></div>
+    <p>Thank you for visiting! 🙏</p>
+    <!-- Dynamic content area -->
+  <div id="dynamic-content" class="hidden">
+    <!-- JS will inject content here -->
+  </div>
   </section>
 
-  <footer>© 2025 Venky Sharma | Designed with ❤️ and curiosity.</footer>
+  <footer>
+    © 2025 Venky Sharma | Designed with ❤️ and ...
+  </footer>
 
+  <!-- JS File -->
   <script src="/JS/about.js"></script>
 </body>
 </html>
