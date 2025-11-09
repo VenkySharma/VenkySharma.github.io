@@ -101,23 +101,24 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2>🛠️ My Side Projects</h2>
       <div class="card-grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1581091215367-59ab6a6a03a9?w=800&q=80" alt="Portfolio Project">
-          <h3>Portfolio Website</h3>
-          <p>A fully responsive personal website with animations and particle background effects.</p>
-          <a href="/Html/project1.html" class="btn">Learn More</a>
+          <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&q=80" alt="Portfolio Project">
+          <h3>A noob's Web..</h3>
+          <p>Playing with web and its components just to timepass. It shows you can have fun with Html, Js and css.</p>
+          <a href="https://venkysharma.github.io/" class="btn">Learn More</a>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=800&q=80" alt="Security Tool">
-          <h3>Vulnerability Scanner</h3>
-          <p>A Python-based scanner to detect common security flaws in web applications.</p>
-          <a href="/Html/project2.html" class="btn">Learn More</a>
+          <img src="https://images.unsplash.com/photo-1723095469034-c3cf31e32730?w=800&q=80" alt="Security Tool">
+          <h3>Analysis of FIR data</h3>
+          <p>Bihar Police report is publicly posted. I have collected all the data(only using FIR Count) related to FIR and have done some analysis on top of that. 
+          You can also play on csv data.</p>
+          <a href="/Html/about/project1.html" class="btn">Learn More</a>
         </div>
       </div>
     `,
 
-    "Journey in Web Dev": `
-      <h2>🚀 My Journey in Web Development</h2>
-      <p>Started with curiosity about how websites work — now exploring full-stack security and ethical hacking.</p>
+    "Journey in Cyber Sec": `
+      <h2>🚀 My Journey in Cyber Security</h2>
+      <p>Started with curiosity about how hacking works — now exploring more Cyber security and ethical hacking.</p>
     `
   };
 
