@@ -20,7 +20,7 @@
       font-family: "Poppins", sans-serif;
       background:
         linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
-        url("https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1400&auto=format&fit=crop")
+        url("https://images.unsplash.com/photo-1705928418747-875e2e64a969?q=80&w=1400&auto=format&fit=crop")
         center/cover no-repeat fixed;
       color: #f5f6fa;
       overflow-x: hidden;
@@ -269,7 +269,7 @@
         extracts key details like total FIR count, district-wise stats, and date trends.
         The data is saved as a CSV file and analyzed in <strong>Google Colab</strong> using Python libraries.
       </p>
-      <button class="download-btn" onclick="window.open('/Data/bihar_fir_data.csv')">⬇️ Download CSV</button>
+      <button class="download-btn" onclick="window.open('https://github.com/VenkySharma/Ph.d-cse/blob/main/FIR-Analysis/bihar_fir_counts.csv')">⬇️ Download CSV</button>
     </section>
 
     <section class="tools">
@@ -299,8 +299,8 @@
       <div class="slider">
         <div class="slides">
           <div class="slide">
-            <img src="/Images/fir_trend.png" alt="FIR Trends Over Time">
-            <p class="caption">Monthly FIR trend showing data distribution across districts.</p>
+            <img src="https://images.unsplash.com/photo-1762684927268-6e4b46b55ee6?" alt="FIR Trends Over Time">
+            <p class="caption">Average FIR Count by Month per Year per Police Station.</p>
           </div>
           <div class="slide">
             <img src="/Images/district_comparison.png" alt="District-wise Comparison">
@@ -319,24 +319,34 @@
     <section class="code">
       <h2>💻 Code Snippet (Web Scraping Logic)</h2>
       <pre><code>
+#!/usr/bin/env python3
+"""
+scrape_bihar_fir_fast.py
+
+Concurrent scraper for SCRB Bihar FIR counts by district & police station.
+Outputs bihar_fir_counts.csv with columns:
+district_id, ps_id, 2020-01 ... 2025-12
+"""
+
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
+import re
+from datetime import datetime
+from collections import Counter, OrderedDict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+import time
+import random
+import csv
+from tqdm import tqdm
 
-url = "https://biharpolice.bih.nic.in/fir-data"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-
-fir_counts = []
-for row in soup.select('table tr')[1:]:
-    cells = row.find_all('td')
-    district = cells[0].text.strip()
-    count = int(cells[1].text.strip())
-    fir_counts.append({'District': district, 'FIR Count': count})
-
-df = pd.DataFrame(fir_counts)
-df.to_csv('bihar_fir_data.csv', index=False)
-print("Data saved successfully!")
+BASE_URL = "https://scrb.bihar.gov.in/FIRiew.aspx"
+DISTRICT_IDS = list(range(1, 39))  # 1..38 inclusive
+START_YEAR, END_YEAR = 2014, 2025
+MAX_WORKERS = 10  # adjust for speed / politeness
+OUTPUT_CSV = "bihar_fir_counts.csv"
+REQUEST_TIMEOUT = 30  # seconds
       </code></pre>
       <p>Full source code: <a href="https://github.com/yourusername/bihar-fir-analysis" target="_blank">GitHub Repository</a></p>
     </section>
