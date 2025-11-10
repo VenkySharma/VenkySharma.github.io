@@ -146,20 +146,19 @@
     .slider {
   position: relative;
   max-width: 100%;
-  height: 500px; /* fixed height */
   overflow: hidden;
-  background-color: rgba(0,0,0,0.6); /* optional backdrop */
   border-radius: 15px;
   margin-top: 1.5rem;
   box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+  transition: height 0.5s ease;
 }
 
 .slide img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* preserves full image without cropping */
+  height: auto;
   border-radius: 15px;
 }
+
 
 
 
@@ -447,8 +446,14 @@ REQUEST_TIMEOUT = 30  # seconds
     function move(step) {
       currentIndex = (currentIndex + step + slides.length) % slides.length;
       slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // Adjust slider height dynamically
+      const currentImg = slides[currentIndex].querySelector("img");
+      slider.style.height = `${currentImg.clientHeight}px`;
     }
 
+    // Initialize height on load
+    window.addEventListener("load", () => move(0));
     // Event listeners
     prev.addEventListener("click", () => move(-1));
     next.addEventListener("click", () => move(1));
