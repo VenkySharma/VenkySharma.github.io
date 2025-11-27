@@ -238,3 +238,89 @@ footer {
   margin-top: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
+
+
+/* ==========================
+   📝 TO-DO WIDGET STYLING
+   ========================== */
+
+.todo-container {
+  margin-top: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+.todo-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.todo-input-row input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.todo-input-row button {
+  padding: 12px 18px;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.todo-input-row button:hover {
+  background: #059669;
+}
+
+#todoList {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 14px;
+  animation: slideIn 0.35s ease;
+}
+
+.todo-item span {
+  color: white;
+  font-size: 15px;
+}
+
+.todo-del-btn {
+  background: #ef4444;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.todo-del-btn:hover {
+  background: #dc2626;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-15px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
