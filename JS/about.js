@@ -190,13 +190,11 @@ function initTodo() {
           // Initialize TO-DO widget after the content loads
         //if (text === "To-Do") initTodo();
         }, 150);
-      } 
-      if (text === "To-Do") initTodo();
+      }
       else {
         contentBox.innerHTML = `<p>🚧 Content coming soon...</p>`;
         contentBox.classList.remove("hidden");
       }
     });
   });
-
 });
