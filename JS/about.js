@@ -159,7 +159,7 @@ function initTodo() {
     "Journey in Cyber Sec": `
       <h2>🚀 My Journey in Cyber Security</h2>
       <p>Started with curiosity about how hacking works — now exploring more Cyber security and ethical hacking.</p>
-    `
+    `,
 
     "To-Do": `
   <h2>📝 To-Do List</h2>
@@ -188,7 +188,7 @@ function initTodo() {
           contentBox.style.opacity = 1;
 
           // Initialize TO-DO widget after the content loads
-        //if (text === "To-Do") initTodo();
+        if (text === "To-Do") initTodo();
         }, 150);
       }
       else {
