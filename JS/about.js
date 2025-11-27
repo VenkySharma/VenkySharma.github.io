@@ -64,6 +64,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+
+  // =====================
+// 📝 To-Do Interactions
+// =====================
+
+function initTodo() {
+  const input = document.getElementById("todoInput");
+  const addBtn = document.getElementById("todoAddBtn");
+  const list = document.getElementById("todoList");
+
+  if (!input || !addBtn || !list) return;
+
+  addBtn.onclick = () => addTodo();
+  input.addEventListener("keypress", e => {
+    if (e.key === "Enter") addTodo();
+  });
+
+  function addTodo() {
+    const task = input.value.trim();
+    if (task === "") return;
+
+    const li = document.createElement("li");
+    li.className = "todo-item";
+
+    const span = document.createElement("span");
+    span.textContent = task;
+
+    const del = document.createElement("button");
+    del.textContent = "Delete";
+    del.className = "todo-del-btn";
+    del.onclick = () => li.remove();
+
+    li.appendChild(span);
+    li.appendChild(del);
+    list.appendChild(li);
+
+    input.value = "";
+  }
+}
+
   drawParticles();
 
   // =====================
@@ -156,44 +196,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-// =====================
-// 📝 To-Do Interactions
-// =====================
-
-function initTodo() {
-  const input = document.getElementById("todoInput");
-  const addBtn = document.getElementById("todoAddBtn");
-  const list = document.getElementById("todoList");
-
-  if (!input || !addBtn || !list) return;
-
-  addBtn.onclick = () => addTodo();
-  input.addEventListener("keypress", e => {
-    if (e.key === "Enter") addTodo();
-  });
-
-  function addTodo() {
-    const task = input.value.trim();
-    if (task === "") return;
-
-    const li = document.createElement("li");
-    li.className = "todo-item";
-
-    const span = document.createElement("span");
-    span.textContent = task;
-
-    const del = document.createElement("button");
-    del.textContent = "Delete";
-    del.className = "todo-del-btn";
-    del.onclick = () => li.remove();
-
-    li.appendChild(span);
-    li.appendChild(del);
-    list.appendChild(li);
-
-    input.value = "";
-  }
-}
 
 });
