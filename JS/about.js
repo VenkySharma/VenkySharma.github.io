@@ -120,6 +120,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2>🚀 My Journey in Cyber Security</h2>
       <p>Started with curiosity about how hacking works — now exploring more Cyber security and ethical hacking.</p>
     `
+
+    "To-Do": `
+  <h2>📝 To-Do List</h2>
+  <div class="todo-container">
+    <div class="todo-input-row">
+      <input type="text" id="todoInput" placeholder="Add task, event, birthday..." />
+      <button id="todoAddBtn">Add</button>
+    </div>
+    <ul id="todoList"></ul>
+  </div>
+`
+
   };
 
   dropdownLinks.forEach(link => {
@@ -134,6 +146,9 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           contentBox.innerHTML = newContent;
           contentBox.style.opacity = 1;
+
+          // Initialize TO-DO widget after the content loads
+        if (text === "To-Do") initTodo();
         }, 150);
       } else {
         contentBox.innerHTML = `<p>🚧 Content coming soon...</p>`;
@@ -141,4 +156,44 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+// =====================
+// 📝 To-Do Interactions
+// =====================
+
+function initTodo() {
+  const input = document.getElementById("todoInput");
+  const addBtn = document.getElementById("todoAddBtn");
+  const list = document.getElementById("todoList");
+
+  if (!input || !addBtn || !list) return;
+
+  addBtn.onclick = () => addTodo();
+  input.addEventListener("keypress", e => {
+    if (e.key === "Enter") addTodo();
+  });
+
+  function addTodo() {
+    const task = input.value.trim();
+    if (task === "") return;
+
+    const li = document.createElement("li");
+    li.className = "todo-item";
+
+    const span = document.createElement("span");
+    span.textContent = task;
+
+    const del = document.createElement("button");
+    del.textContent = "Delete";
+    del.className = "todo-del-btn";
+    del.onclick = () => li.remove();
+
+    li.appendChild(span);
+    li.appendChild(del);
+    list.appendChild(li);
+
+    input.value = "";
+  }
+}
+
 });
