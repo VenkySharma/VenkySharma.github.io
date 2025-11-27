@@ -188,9 +188,11 @@ function initTodo() {
           contentBox.style.opacity = 1;
 
           // Initialize TO-DO widget after the content loads
-        if (text === "To-Do") initTodo();
+        //if (text === "To-Do") initTodo();
         }, 150);
-      } else {
+      } 
+      if (text === "To-Do") initTodo();
+      else {
         contentBox.innerHTML = `<p>🚧 Content coming soon...</p>`;
         contentBox.classList.remove("hidden");
       }
