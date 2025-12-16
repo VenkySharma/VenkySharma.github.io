@@ -182,7 +182,7 @@ function initTodo() {
     <p>An amazing hands-on experience in advanced cryptography topics. Learned a lot from experts and networked with peers!</p>
     <p>Official Event Page: <a href="https://events.iitbhilai.ac.in/cws/" target="_blank">Crypto Winter School 2025</a></p>
     <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px 0;">
-      <img src="Images/IMG-20251212-WA0018.jpg" alt="Group activity at Crypto Winter School, IIT Bhilai" style="max-width:300px; border-radius:8px;">
+      <img src="/Images/IMG-20251212-WA0018.jpg" alt="Group activity at Crypto Winter School, IIT Bhilai" style="max-width:300px; border-radius:8px;">
       <img src="/Images/IMG20251211145125.jpg" alt="IIT Bhilai Campus during Crypto event" style="max-width:300px; border-radius:8px;">
       <img src="/Images/IMG20251212134507.jpg" alt="Some cuisine from the event" style="max-width:300px; border-radius:8px;">
       
