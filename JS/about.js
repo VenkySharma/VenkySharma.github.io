@@ -171,7 +171,7 @@ function initTodo() {
     <ul id="todoList"></ul>
   </div>
 `,
-    "Weekly-Updates": `
+    "Weekly-Updates ": `
     📅 Weekly Updates
 
 <h3>Recent activity from Fall(Aug-Dec 2025) </h3>
