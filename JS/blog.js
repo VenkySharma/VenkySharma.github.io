@@ -353,6 +353,9 @@ function openInModal(id) {
   externalOpen.style.display = p.external ? 'inline-block' : 'none';
   externalOpen.onclick = () => { if (p.external) window.open(p.external, '_blank'); };
   backdrop.style.display = 'flex';
+  
+  // 🔥 THIS LINE FIXES LATEX
+  if (window.MathJax) MathJax.typesetPromise();
 }
 
 document.getElementById('closeModal').onclick = () => {
