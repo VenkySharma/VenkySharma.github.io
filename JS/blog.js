@@ -267,7 +267,7 @@ const posts = [
     </p>
     `,
     external: ''
-
+  },
 ];
 
 // Elements
