@@ -172,48 +172,59 @@ function initTodo() {
   </div>
 `,
     "Weekly-Updates": `
-    <h2>📅 Weekly Updates</h2>
-
-<h3>Recent activity from Fall(Aug-Dec 2025) </h3>
-
-<ul>
-  
-  <li><strong>Attended Crypto Winter School 2025 at IIT Bhilai (9-12 December 2025):</strong>
-    <p>An amazing hands-on experience in advanced cryptography topics. Learned a lot from experts and networked with peers!</p>
-    <p>Official Event Page: <a href="https://events.iitbhilai.ac.in/cws/" target="_blank">Crypto Winter School 2025</a></p>
-    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px 0;">
-      <img src="/Images/IMG-20251212-WA0018.jpg" alt="Group activity at Crypto Winter School, IIT Bhilai" style="max-width:300px; border-radius:8px;">
-      <img src="/Images/IMG20251211145125.jpg" alt="IIT Bhilai Campus during Crypto event" style="max-width:300px; border-radius:8px;">
-      <img src="/Images/IMG20251212134507.jpg" alt="Some cuisine from the event" style="max-width:300px; border-radius:8px;">
+      <h2>📅 Weekly Updates</h2>
       
-    </div>
-  </li>
-  <li><strong>Completed some courses in Fall 2025:</strong>
-     <ul> Some college courses(hardness level medium)
-      <li>Generative Artificial Intelligence - Grade: B+ among about 200 students</li>
-      <li>Hardware Security for iot - Grade: B+ among about 50 students</li>
-      <li>Introduction to Machine Learning - Grade: C+ among 400 students</li>
-    </ul>
-    <ul> Completed come NPTEL courses too..:) funny
-      <li>Data science for Engineers - Grade: (80%) among top 5%</li>
-      <li>Responsible & Safe AI Systems - Grade: (75%)</li>
-      <li>Introduction to Large Language Models - I did't sit for exam because of time clash oops.. ): so not completed</li>
-    </ul>
-    <p>I really don't care about grades though, but if it causes you some harm(current fellowship end, future fellowship possibilities) then you have to worry about and it is not bad to work a little bit harder. FYI B+ is 9 and C+ is 7. Both genai and Iml were math oriented courses but you can see that their grades contradict to each other.</p>
-    <p> The disimilarity comes from that there are double number of students in iml compared to genai so. in that case I just made simple mistakes in working of maths behind Decision Trees and beacuse of that my grades got downgraded beacuse of just silly mistakes. </p>
-    <p>Do not laugh :) it was just how you would use entropy to decide the route of the decision tree. just this costs me hardly. </p>
-    <p> Gen-AI was project heavy course, so if you perform better tha others in that project only it will give you advantage, and that happens in this case for me. Also remember I was second maximum gainer in Genai-endsem.:) </p>
-    <p>So let me tell you why I opted for these courses , I am a system type guy specially secuerity, but I wanted to understand fundamnetals behind them like how these ml model works, how these llm buzz is based on these basics.</p>
-    <p>And yeah it have helped me very much. I can help you understand like any topic in ML/DL/LLMs</p>
-    <p>SO overall i have achieved most crucial part of the course as a researcher: Learning :) </p>
-    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px 0;">
-      <img src="/Images/L2hvbWUvZWZzZGF0YS82NV9zZXJ2ZXIvcG9zdEltYWdlLzIwMjUvMTIvMTYvMjAyNTEyMTYwNTM0MjMwNzg1LnBuZw==.jpeg" style="max-width:300px; border-radius:8px;">
+      <h3>Recent Activity: Fall (Aug–Dec 2025)</h3>
       
-    </div>
-  </li>
-  
-</ul>
-    `
+      <ul>
+        <li>
+          <strong>Attended Crypto Winter School 2025 at IIT Bhilai (9–12 December 2025):</strong>
+          <p>This was an amazing hands-on experience covering advanced cryptography topics. I learned a lot from experts and had the opportunity to network with peers!</p>
+          <p>Official Event Page: <a href="https://events.iitbhilai.ac.in/cws/" target="_blank">Crypto Winter School 2025</a></p>
+          <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px 0;">
+            <img src="/Images/IMG-20251212-WA0018.jpg" alt="Group activity at Crypto Winter School, IIT Bhilai" style="max-width:300px; border-radius:8px;">
+            <img src="/Images/IMG20251211145125.jpg" alt="IIT Bhilai Campus during Crypto event" style="max-width:300px; border-radius:8px;">
+            <img src="/Images/IMG20251212134507.jpg" alt="Event cuisine" style="max-width:300px; border-radius:8px;">
+          </div>
+        </li>
+      
+        <li>
+          <strong>Completed Courses in Fall 2025:</strong>
+      
+          <h4>College Courses (medium difficulty)</h4>
+          <ul>
+            <li>Generative Artificial Intelligence – Grade: B+ (among ~200 students)</li>
+            <li>Hardware Security for IoT – Grade: B+ (among ~50 students)</li>
+            <li>Introduction to Machine Learning – Grade: C+ (among ~400 students)</li>
+          </ul>
+      
+          <h4>NPTEL Courses</h4>
+          <ul>
+            <li>Data Science for Engineers – Grade: 80% (top 5%)</li>
+            <li>Responsible & Safe AI Systems – Grade: 75%</li>
+            <li>Introduction to Large Language Models – Did not sit for exam due to time conflict, not completed</li>
+          </ul>
+      
+          <p>Grades are not my main priority, but they can impact fellowship opportunities and future prospects, so it’s worth reflecting on performance. For reference, B+ corresponds to 9 and C+ to 7.</p>
+      
+          <p>Both the Generative AI and Intro to ML courses were math-intensive, but the grades differ because the ML course had double the number of students. Minor calculation mistakes in Decision Trees slightly lowered my grade.</p>
+      
+          <p>For example, a small entropy miscalculation in the Decision Tree algorithm cost me points. 😊</p>
+      
+          <p>The Generative AI course was project-heavy, so excelling in projects mattered more than exams. I was the second highest scorer in the GenAI end-sem project, which helped me achieve a B+.</p>
+      
+          <p>My motivation for choosing these courses was to understand the fundamentals behind ML and LLMs, even though my background is more systems and security-oriented. This knowledge has been invaluable in understanding how models work under the hood.</p>
+      
+          <p>Overall, I’ve achieved the most crucial goal as a researcher: <strong>learning and understanding!</strong> I feel confident to explain any topic in ML, DL, or LLMs.</p>
+      
+          <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin:20px 0;">
+            <img src="/Images/L2hvbWUvZWZzZGF0YS82NV9zZXJ2ZXIvcG9zdEltYWdlLzIwMjUvMTIvMTYvMjAyNTEyMTYwNTM0MjMwNzg1LnBuZw==.jpeg" alt="Course-related image" style="max-width:300px; border-radius:8px;">
+          </div>
+        </li>
+      </ul>
+      `,
+    
+
 
   };
 
