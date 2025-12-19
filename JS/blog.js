@@ -271,7 +271,7 @@ const posts = [
 
   {
     id: 5,
-    title: 'TLS 1.3, Secure Communication, Hppts?',
+    title: 'TLS 1.3, Secure Communication, is it Https?',
     kicker: 'Https · TLS',
     date: '2025-12-18',
     summary: '',
@@ -448,7 +448,7 @@ const posts = [
 
   {
     id: 6,
-    title: 'Oicd, hey can you Auth & Authz him',
+    title: 'Oicd, hey can you Auth & Authz him for me',
     kicker: 'Oicd · Auth-C · Auth-Z ',
     date: '2025-12-19',
     summary: '',
