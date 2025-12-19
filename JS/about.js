@@ -141,13 +141,13 @@ function initTodo() {
       <h2>🛠️ My Side Projects</h2>
       <div class="card-grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&q=80" alt="Portfolio Project">
+          <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&q=80" alt="Portfolio Project" style="max-width:300px; border-radius:8px;">
           <h3>A noob's Web..</h3>
           <p>Playing with web and its components just to timepass. It shows you can have fun with Html, Js and css.</p>
           <a href="https://venkysharma.github.io/" class="btn">Learn More</a>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1723095469034-c3cf31e32730?w=800&q=80" alt="Security Tool">
+          <img src="https://images.unsplash.com/photo-1723095469034-c3cf31e32730" alt="Security Tool" style="max-width:300px; border-radius:8px;">
           <h3>Analysis of FIR data</h3>
           <p>Bihar Police report is publicly posted. I have collected all the data(only using FIR Count) related to FIR and have done some analysis on top of that. 
           You can also play on csv data.</p>
