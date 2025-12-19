@@ -80,12 +80,24 @@ aside{position:sticky;top:28px;padding:18px;border-radius:12px;background:linear
 
 /* MODAL */
 .modal-backdrop{position:fixed;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.6),rgba(2,6,23,0.85));display:none;align-items:center;justify-content:center;padding:28px;z-index:80}
-.modal{width:100%;max-width:900px;background:linear-gradient(180deg,#061426,#07172b);border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 80px rgba(2,6,23,0.9);max-height:85vh;overflow:auto}
+/*.modal{width:100%;max-width:900px;background:linear-gradient(180deg,#061426,#07172b);border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 40px 80px rgba(2,6,23,0.9);max-height:85vh;overflow:auto}*/
+.modal {
+  max-height: 85vh;
+  overflow: hidden; /* stop clipping confusion */
+  display: flex;
+  flex-direction: column;
+}
+
 .modal-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .modal-actions{display:flex;gap:8px;align-items:center}
 .modal-kicker{font-size:12px;color:var(--muted);font-weight:600}
 .modal-meta{color:var(--muted);font-size:13px}
-.modal-content{line-height:1.65;color:#dfefff}
+/*.modal-content{line-height:1.65;color:#dfefff}*/
+.modal-content {
+  overflow-y: auto;
+  max-height: calc(85vh - 260px); /* header + image */
+  padding-right: 10px;
+}
 .close{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
 
 
