@@ -52,8 +52,8 @@ function drawMatrix() {
 
   // ---- GREEN VERTICAL ----
   ctx.fillStyle = "lime";
-  ctx.shadowColor = "lime";
-  ctx.shadowBlur = 1;
+  //ctx.shadowColor = "lime";
+  //ctx.shadowBlur = 1;
   for (let i = 0; i < yPositions.length; i++) {
     const char = greenchars[Math.floor(Math.random() * greenchars.length)];
     const x = i * fontSize;
@@ -70,8 +70,8 @@ function drawMatrix() {
 
   // ---- RED HORIZONTAL ----
   ctx.fillStyle = "red";
-  ctx.shadowColor = "red";
-  ctx.shadowBlur = 1;
+  //ctx.shadowColor = "red";
+  //ctx.shadowBlur = 1;
   for (let i = 0; i < xPositions.length; i++) {
     const char = redchars[Math.floor(Math.random() * redchars.length)];
     const x = xPositions[i] * fontSize;
