@@ -1,7 +1,6 @@
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
 
-// Resize function
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -9,7 +8,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-// Characters
 const sets = [
   "0123456789",
   "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -22,23 +20,19 @@ const sets = [
   "♠♣♥♦♪♫☼☽☾⚡☢☣☠☯✦✪✩✫✬✭"
 ];
 
-const greenchars = sets[Math.floor(Math.random() * sets.length)];
-const redchars = sets[Math.floor(Math.random() * sets.length)];
+// Split into array of characters to handle multi-byte symbols
+let greenchars = sets[Math.floor(Math.random() * sets.length)].split('');
+let redchars = sets[Math.floor(Math.random() * sets.length)].split('');
 
-
-//const chars = "01ABCDEF#$%&@";
 const fontSize = 16;
 ctx.font = fontSize + "px monospace";
 
-// VERTICAL MATRIX (green)
 let columns = Math.floor(canvas.width / fontSize);
 let yPositions = Array(columns).fill(0);
 
-// HORIZONTAL MATRIX (red)
 let rows = Math.floor(canvas.height / fontSize);
 let xPositions = Array(rows).fill(0);
 
-// Reset positions on resize
 window.addEventListener("resize", () => {
   columns = Math.floor(canvas.width / fontSize);
   rows = Math.floor(canvas.height / fontSize);
@@ -46,14 +40,20 @@ window.addEventListener("resize", () => {
   xPositions = Array(rows).fill(0);
 });
 
-// Draw loop
+// Optional: dynamic charset switching every 10s
+setInterval(() => {
+  greenchars = sets[Math.floor(Math.random() * sets.length)].split('');
+  redchars   = sets[Math.floor(Math.random() * sets.length)].split('');
+}, 10000);
+
 function drawMatrix() {
-  // Fade background
   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // ---- GREEN VERTICAL ----
   ctx.fillStyle = "lime";
+  ctx.shadowColor = "lime";
+  ctx.shadowBlur = 10;
   for (let i = 0; i < yPositions.length; i++) {
     const char = greenchars[Math.floor(Math.random() * greenchars.length)];
     const x = i * fontSize;
@@ -70,6 +70,8 @@ function drawMatrix() {
 
   // ---- RED HORIZONTAL ----
   ctx.fillStyle = "red";
+  ctx.shadowColor = "red";
+  ctx.shadowBlur = 10;
   for (let i = 0; i < xPositions.length; i++) {
     const char = redchars[Math.floor(Math.random() * redchars.length)];
     const x = xPositions[i] * fontSize;
@@ -87,5 +89,4 @@ function drawMatrix() {
   requestAnimationFrame(drawMatrix);
 }
 
-// Start animation
 drawMatrix();
