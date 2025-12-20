@@ -24,7 +24,7 @@ const sets = [
 const chars = sets[Math.floor(Math.random() * sets.length)];
 
 
-const chars = "01ABCDEF#$%&@";
+//const chars = "01ABCDEF#$%&@";
 const fontSize = 16;
 ctx.font = fontSize + "px monospace";
 
