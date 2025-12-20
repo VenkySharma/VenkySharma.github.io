@@ -88,7 +88,7 @@ body {
     min-height: 100vh;
 
     /* --- Background Image --- */
-    background-image: url('https://images.unsplash.com/photo-1614064548237-096f735f344f'); /* ✅ adjust path */
+    /*background-image: url('https://images.unsplash.com/photo-1614064548237-096f735f344f'); /* ✅ adjust path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
