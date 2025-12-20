@@ -10,6 +10,20 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
 // Characters
+const sets = [
+  "0123456789",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "abcdefghijklmnopqrstuvwxyz",
+  "!@#$%^&*()-_=+[]{}|;:,.<>?",
+  "█▓▒░│─┌┐└┘├┤┬┴┼",
+  "←↑→↓⇐⇒⇔⇑⇓",
+  "αβγδελμπσΩ",
+  "アイウエオカキクケコサシスセソタチツテトナニヌネノ"
+];
+
+const chars = sets[Math.floor(Math.random() * sets.length)];
+
+
 const chars = "01ABCDEF#$%&@";
 const fontSize = 16;
 ctx.font = fontSize + "px monospace";
