@@ -35,11 +35,12 @@
     <section id="home" class="home">
 
         <div class="home-content" data-scroll data-scroll-speed="-5" >
-            <h3 class="mu">Venky</h3>
+            <h2><span class="pro-text"></span></h2>
+            <p><span class="human-text"></span></p>
+            
         
-            <h3>is <span class="pro-text">
                 <script>
-                   var typed = new Typed(".pro-text", {
+                   /*var typed = new Typed(".pro-text", {
                       strings: [
                         "a Security Researcher",
                           "an Ethical Hacker",
@@ -51,8 +52,28 @@
                       backSpeed: 100,   
                       backDelay: 1000,  
                       loop: true        
-                    });
+                    });*/
+                    new Typed(".pro-text", {
+                          strings: [
+                            "Cybersecurity Research",
+                            "Systems & Network Defense",
+                            "Post Quantum Cryptography"
+                          ],
+                          loop: true
+                        });
+                        
+                        new Typed(".human-text", {
+                          strings: [
+                            "⚽ Football",
+                            "🎶 Music"
+                          ],
+                          typeSpeed: 40,
+                          backSpeed: 30,
+                          loop: true
+                        });
+
                 </script>
+                
             </span></h3>
             
                      <p>
