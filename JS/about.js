@@ -165,7 +165,7 @@ function initTodo() {
   <h2>📝 To-Do List</h2>
   <div class="todo-container">
     <div class="todo-input-row">
-      <input type="text" id="todoInput" placeholder="Add task, event, birthday..." />
+      <input type="text" id="todoInput" placeholder="Don't worry it is not for you. It is for my use to define goals for the day or the week" />
       <button id="todoAddBtn">Add</button>
     </div>
     <ul id="todoList"></ul>
