@@ -53,22 +53,26 @@
                       backDelay: 1000,  
                       loop: true        
                     });*/
-                    new Typed(".pro-text", {
+                    var typed = new Typed(".pro-text", {
                           strings: [
                             "Cybersecurity Research",
                             "Systems & Network Defense",
                             "Post Quantum Cryptography"
                           ],
+                          typeSpeed: 100,   
+                          backSpeed: 100,   
+                          backDelay: 1000, 
                           loop: true
                         });
                         
-                        new Typed(".human-text", {
+                      var typed =  new Typed(".human-text", {
                           strings: [
                             "⚽ Football",
                             "🎶 Music"
                           ],
                           typeSpeed: 40,
                           backSpeed: 30,
+                          backDelay: 100,
                           loop: true
                         });
 
