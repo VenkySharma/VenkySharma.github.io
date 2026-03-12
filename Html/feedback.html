@@ -1,70 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tutorial Feedback</title>
-  <style>
-    body{
-      font-family: Arial;
-      max-width: 700px;
-      margin: auto;
-      padding: 40px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    input, textarea, select{
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 20px;
-    }
+<title>Tutorial Feedback</title>
 
-    button{
-      background: #2d6cdf;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-    }
-  </style>
+<link rel="stylesheet" href="/CSS/feedback.css">
 </head>
 
 <body>
 
+<canvas id="particle-bg"></canvas>
+
+<div class="feedback-card">
+
 <h2>Anonymous Tutorial Feedback</h2>
-<p>Your feedback helps improve future tutorials.</p>
+<p class="subtitle">Network & Web Security Tutorial</p>
 
-<form action="https://formspree.io/f/xvzwrppy" method="POST">
+<form id="feedbackForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-<label>Tutorial Topic</label>
-<input type="text" name="tutorial_topic" required>
+<input type="text" name="topic" placeholder="Tutorial Topic (optional)">
 
-<label>How clear was the explanation?</label>
-<select name="clarity">
-<option>1 - Poor</option>
-<option>2</option>
-<option>3</option>
-<option>4</option>
-<option>5 - Excellent</option>
-</select>
+<label>How useful was the tutorial?</label>
 
-<label>Pace of the tutorial</label>
-<select name="pace">
-<option>Too Slow</option>
-<option>Good</option>
-<option>Too Fast</option>
-</select>
+<div class="star-rating" id="starRating">
+<span class="star">★</span>
+<span class="star">★</span>
+<span class="star">★</span>
+<span class="star">★</span>
+<span class="star">★</span>
+</div>
 
-<label>What did you like most?</label>
-<textarea name="positive_feedback"></textarea>
+<input type="hidden" name="rating" id="ratingValue">
 
-<label>What should be improved?</label>
-<textarea name="improvement"></textarea>
+<textarea name="positive" placeholder="What did you like?"></textarea>
 
-<label>Additional comments</label>
-<textarea name="comments"></textarea>
+<textarea name="improvement" placeholder="What could be improved?"></textarea>
 
 <button type="submit">Submit Feedback</button>
 
 </form>
+
+<div class="success-msg" id="successMsg">
+✅ Thank you for your feedback!
+</div>
+
+</div>
+
+<script src="/JS/feedback.js"></script>
 
 </body>
 </html>

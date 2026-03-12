@@ -1,0 +1,253 @@
+/* ==============================
+   GLOBAL STYLES
+============================== */
+
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+
+/* ==============================
+   PARTICLE CANVAS
+============================== */
+
+#particle-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+
+/* ==============================
+   FEEDBACK CARD
+============================== */
+
+.feedback-card{
+
+  backdrop-filter: blur(14px);
+
+  background: rgba(255,255,255,0.08);
+
+  border-radius:16px;
+
+  padding:40px;
+
+  width:420px;
+
+  max-width:90%;
+
+  box-shadow:0 12px 40px rgba(0,0,0,0.5);
+
+  animation:fadeUp .8s ease;
+}
+
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+h2{
+  text-align:center;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.subtitle{
+  text-align:center;
+  opacity:.8;
+  margin-bottom:30px;
+  font-size:14px;
+}
+
+
+/* ==============================
+   INPUTS
+============================== */
+
+input, textarea{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:8px;
+
+  margin-bottom:15px;
+
+  background:rgba(255,255,255,0.12);
+
+  color:white;
+
+  font-size:14px;
+
+  outline:none;
+
+  transition:.2s;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:rgba(255,255,255,.6);
+}
+
+
+input:focus,
+textarea:focus{
+
+  background:rgba(255,255,255,0.18);
+
+  transform:scale(1.02);
+
+}
+
+
+
+/* ==============================
+   STAR RATING
+============================== */
+
+.star-rating{
+
+  display:flex;
+
+  gap:10px;
+
+  font-size:28px;
+
+  margin-bottom:20px;
+
+  cursor:pointer;
+
+  justify-content:center;
+
+}
+
+.star{
+
+  color:#555;
+
+  transition:.25s;
+
+}
+
+.star:hover{
+
+  transform:scale(1.2);
+
+}
+
+.star.active{
+
+  color:#ffd43b;
+
+}
+
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+button{
+
+  width:100%;
+
+  padding:12px;
+
+  border:none;
+
+  border-radius:8px;
+
+  background:#3b82f6;
+
+  color:white;
+
+  font-size:16px;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+}
+
+button:hover{
+
+  background:#2563eb;
+
+  transform:translateY(-2px);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+
+}
+
+
+
+/* ==============================
+   SUCCESS MESSAGE
+============================== */
+
+.success-msg{
+
+  text-align:center;
+
+  margin-top:15px;
+
+  color:#4ade80;
+
+  font-weight:500;
+
+  display:none;
+
+  animation:fadeIn .6s ease;
+
+}
+
+@keyframes fadeIn{
+
+  from{opacity:0;}
+  to{opacity:1;}
+
+}
+
+
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+
+@media(max-width:600px){
+
+.feedback-card{
+  padding:30px;
+}
+
+.star-rating{
+  font-size:24px;
+}
+
+}

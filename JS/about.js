@@ -174,6 +174,24 @@ function initTodo() {
     "Weekly-Updates": `
       <h2>📅 Weekly Updates</h2>
       
+	 <div class="update-highlight">
+    <h3>👨‍🏫 Teaching Assistant — Network & Web Security</h3>
+
+    <p>
+      This semester I am working as a <strong>Teaching Assistant (TA)</strong> for the course 
+      <strong>Network and Web Security</strong> offered to 
+      <strong>e-Masters students</strong>.
+    </p>
+
+    <p>
+      If you attended my tutorial sessions, I would really appreciate your feedback.
+    </p>
+
+    <p>
+      👉 <a href="/feedback.html" target="_blank" class="btn">Submit Anonymous Tutorial Feedback</a>
+    </p>
+
+  </div>
       <h3>Recent Activity: Fall (Aug–Dec 2025)</h3>
       
       <ul>
