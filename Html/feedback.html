@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutorial Feedback</title>
+  <style>
+    body{
+      font-family: Arial;
+      max-width: 700px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    input, textarea, select{
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+    }
+
+    button{
+      background: #2d6cdf;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Anonymous Tutorial Feedback</h2>
+<p>Your feedback helps improve future tutorials.</p>
+
+<form action="https://formspree.io/f/xvzwrppy" method="POST">
+
+<label>Tutorial Topic</label>
+<input type="text" name="tutorial_topic" required>
+
+<label>How clear was the explanation?</label>
+<select name="clarity">
+<option>1 - Poor</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5 - Excellent</option>
+</select>
+
+<label>Pace of the tutorial</label>
+<select name="pace">
+<option>Too Slow</option>
+<option>Good</option>
+<option>Too Fast</option>
+</select>
+
+<label>What did you like most?</label>
+<textarea name="positive_feedback"></textarea>
+
+<label>What should be improved?</label>
+<textarea name="improvement"></textarea>
+
+<label>Additional comments</label>
+<textarea name="comments"></textarea>
+
+<button type="submit">Submit Feedback</button>
+
+</form>
+
+</body>
+</html>
