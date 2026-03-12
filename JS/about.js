@@ -188,7 +188,7 @@ function initTodo() {
     </p>
 
     <p>
-      👉 <a href="/feedback.html" target="_blank" class="btn">Submit Anonymous Tutorial Feedback</a>
+      👉 <a href="/Html/feedback.html" target="_blank" class="btn">Submit Anonymous Tutorial Feedback</a>
     </p>
 
   </div>
