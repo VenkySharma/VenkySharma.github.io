@@ -335,3 +335,207 @@ function deleteEntry(index){
     showToast("Memory Deleted");
 
 }
+/* =====================================================
+   Part 3 - Search, Sort & Timeline
+===================================================== */
+
+const searchBox = document.getElementById("searchBox");
+const sortSelect = document.getElementById("sortSelect");
+
+const timelineBtn = document.getElementById("timelineBtn");
+const cardBtn = document.getElementById("cardBtn");
+
+const timelineView = document.getElementById("timelineView");
+const timelineContainer = document.getElementById("timelineContainer");
+
+let currentView = "cards";
+
+/* =======================================
+        Search
+======================================= */
+
+searchBox.addEventListener("input", () => {
+
+    const keyword = searchBox.value.toLowerCase();
+
+    const filtered = logs.filter(item =>
+
+        item.friend.toLowerCase().includes(keyword) ||
+
+        item.place.toLowerCase().includes(keyword) ||
+
+        (item.food || "").toLowerCase().includes(keyword) ||
+
+        (item.occasion || "").toLowerCase().includes(keyword)
+
+    );
+
+    renderCards(filtered);
+
+});
+
+/* =======================================
+        Sort
+======================================= */
+
+sortSelect.addEventListener("change", () => {
+
+    const mode = sortSelect.value;
+
+    let arr = [...logs];
+
+    switch(mode){
+
+        case "newest":
+
+            arr.sort((a,b)=>
+                new Date(b.date)-new Date(a.date)
+            );
+
+            break;
+
+        case "oldest":
+
+            arr.sort((a,b)=>
+                new Date(a.date)-new Date(b.date)
+            );
+
+            break;
+
+        case "friend":
+
+            arr.sort((a,b)=>
+                a.friend.localeCompare(b.friend)
+            );
+
+            break;
+
+        case "amount":
+
+            arr.sort((a,b)=>
+                b.amount-a.amount
+            );
+
+            break;
+
+    }
+
+    renderCards(arr);
+
+});
+
+/* =======================================
+        Timeline
+======================================= */
+
+function renderTimeline(){
+
+    timelineContainer.innerHTML="";
+
+    const arr=[...logs].sort(
+
+        (a,b)=>new Date(b.date)-new Date(a.date)
+
+    );
+
+    if(arr.length===0){
+
+        timelineContainer.innerHTML=`
+
+        <div class="empty-state">
+
+        <div class="empty-icon">🍜</div>
+
+        <h2>No Memories Yet</h2>
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+    arr.forEach(item=>{
+
+        const clone=document
+
+        .getElementById("timelineTemplate")
+
+        .content.cloneNode(true);
+
+        clone.querySelector(".timelineFriend")
+
+            .textContent=item.friend;
+
+        clone.querySelector(".timelineDate")
+
+            .textContent=formatDate(item.date);
+
+        clone.querySelector(".timelineRestaurant")
+
+            .textContent="📍 "+item.place;
+
+        clone.querySelector(".timelineFood")
+
+            .textContent="🍽 "+(item.food||"-");
+
+        clone.querySelector(".timelineOccasion")
+
+            .textContent="🎉 "+(item.occasion||"-");
+
+        timelineContainer.appendChild(clone);
+
+    });
+
+}
+
+/* =======================================
+        Toggle View
+======================================= */
+
+timelineBtn.addEventListener("click",()=>{
+
+    currentView="timeline";
+
+    document.querySelector(".entries")
+
+        .classList.add("hidden");
+
+    timelineView.classList.remove("hidden");
+
+    renderTimeline();
+
+});
+
+cardBtn.addEventListener("click",()=>{
+
+    currentView="cards";
+
+    timelineView.classList.add("hidden");
+
+    document.querySelector(".entries")
+
+        .classList.remove("hidden");
+
+    renderCards();
+
+});
+
+/* =======================================
+        Refresh Timeline Automatically
+======================================= */
+
+const oldRender = renderCards;
+
+renderCards = function(data = logs){
+
+    oldRender(data);
+
+    if(currentView==="timeline"){
+
+        renderTimeline();
+
+    }
+
+};
