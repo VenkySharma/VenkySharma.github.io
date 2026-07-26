@@ -539,3 +539,345 @@ renderCards = function(data = logs){
     }
 
 };
+/* =====================================================
+   Part 4 - Charts, Import/Export & Enhancements
+===================================================== */
+
+let monthlyChart = null;
+let friendChart = null;
+
+/* =======================================
+        Charts
+======================================= */
+
+function updateCharts(){
+
+    /* ---------- Monthly Spending ---------- */
+
+    const monthMap = {};
+
+    logs.forEach(item=>{
+
+        const key = new Date(item.date)
+            .toLocaleString("default",{
+                month:"short",
+                year:"2-digit"
+            });
+
+        monthMap[key]=(monthMap[key]||0)+Number(item.amount);
+
+    });
+
+    const monthLabels=Object.keys(monthMap);
+
+    const monthValues=Object.values(monthMap);
+
+    if(monthlyChart){
+
+        monthlyChart.destroy();
+
+    }
+
+    monthlyChart=new Chart(
+
+        document.getElementById("monthlyChart"),
+
+        {
+
+            type:"bar",
+
+            data:{
+
+                labels:monthLabels,
+
+                datasets:[{
+
+                    label:"Money Spent",
+
+                    data:monthValues,
+
+                    borderWidth:1
+
+                }]
+
+            },
+
+            options:{
+
+                responsive:true,
+
+                plugins:{
+                    legend:{
+                        display:false
+                    }
+                }
+
+            }
+
+        }
+
+    );
+
+
+
+    /* ---------- Friend Leaderboard ---------- */
+
+    const friendMap={};
+
+    logs.forEach(item=>{
+
+        friendMap[item.friend]=(friendMap[item.friend]||0)+1;
+
+    });
+
+    const friendNames=Object.keys(friendMap);
+
+    const friendCounts=Object.values(friendMap);
+
+    if(friendChart){
+
+        friendChart.destroy();
+
+    }
+
+    friendChart=new Chart(
+
+        document.getElementById("friendChart"),
+
+        {
+
+            type:"doughnut",
+
+            data:{
+
+                labels:friendNames,
+
+                datasets:[{
+
+                    data:friendCounts
+
+                }]
+
+            },
+
+            options:{
+
+                responsive:true
+
+            }
+
+        }
+
+    );
+
+}
+
+/* =======================================
+        Refresh UI
+======================================= */
+
+const originalRender=renderCards;
+
+renderCards=function(data=logs){
+
+    originalRender(data);
+
+    updateCharts();
+
+};
+
+/* =======================================
+        Export JSON
+======================================= */
+
+document
+
+.getElementById("exportJSON")
+
+.addEventListener("click",()=>{
+
+    const blob=new Blob(
+
+        [JSON.stringify(logs,null,2)],
+
+        {
+
+            type:"application/json"
+
+        }
+
+    );
+
+    const a=document.createElement("a");
+
+    a.href=URL.createObjectURL(blob);
+
+    a.download="friend-log.json";
+
+    a.click();
+
+    showToast("JSON Exported");
+
+});
+
+/* =======================================
+        Export CSV
+======================================= */
+
+document
+
+.getElementById("exportCSV")
+
+.addEventListener("click",()=>{
+
+    let csv="Friend,Date,Place,Food,Amount,Occasion,Notes\n";
+
+    logs.forEach(item=>{
+
+        csv+=
+
+`${item.friend},
+${item.date},
+${item.place},
+${item.food},
+${item.amount},
+${item.occasion},
+"${item.notes}"\n`;
+
+    });
+
+    const blob=new Blob(
+
+        [csv],
+
+        {
+
+            type:"text/csv"
+
+        }
+
+    );
+
+    const a=document.createElement("a");
+
+    a.href=URL.createObjectURL(blob);
+
+    a.download="friend-log.csv";
+
+    a.click();
+
+    showToast("CSV Exported");
+
+});
+
+/* =======================================
+        Import JSON
+======================================= */
+
+const importModal=document.getElementById("importModal");
+
+document
+
+.getElementById("importJSON")
+
+.addEventListener("click",()=>{
+
+    const file=document
+
+        .getElementById("importFile")
+
+        .files[0];
+
+    if(!file){
+
+        alert("Choose a JSON file.");
+
+        return;
+
+    }
+
+    const reader=new FileReader();
+
+    reader.onload=e=>{
+
+        try{
+
+            logs=JSON.parse(e.target.result);
+
+            saveLogs();
+
+            renderCards();
+
+            updateStats();
+
+            updateCharts();
+
+            importModal.classList.add("hidden");
+
+            showToast("Imported Successfully");
+
+        }
+
+        catch(err){
+
+            alert("Invalid JSON file.");
+
+        }
+
+    };
+
+    reader.readAsText(file);
+
+});
+
+/* =======================================
+        Import Modal
+======================================= */
+
+document
+
+.getElementById("closeImport")
+
+.onclick=()=>{
+
+    importModal.classList.add("hidden");
+
+};
+
+document
+
+.getElementById("cancelImport")
+
+.onclick=()=>{
+
+    importModal.classList.add("hidden");
+
+};
+
+/* =======================================
+        Keyboard Shortcut
+======================================= */
+
+window.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        closeModal();
+
+        importModal.classList.add("hidden");
+
+    }
+
+});
+
+/* =======================================
+        First Load
+======================================= */
+
+renderCards();
+
+updateStats();
+
+updateCharts();
+
+showToast("Welcome 🍕");
