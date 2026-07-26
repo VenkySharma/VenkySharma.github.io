@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Friend Treat Log | Venkatesh Kumar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/friend-log.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+Venkatesh Kumar
+</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="projects.html">Projects</a></li>
+
+<li><a href="friend-log.html" class="active">
+Friend Log
+</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<section class="friend-hero">
+
+<div class="hero-content">
+
+<h1>
+🍜 Friend Treat Log
+</h1>
+
+<p>
+
+A personal collection of meals, coffees,
+celebrations and unforgettable conversations.
+
+Every shared meal creates a memory.
+
+</p>
+
+<button id="openModal" class="primary-btn">
+
++ Add New Memory
+
+</button>
+
+</div>
+
+</section>
+
+
+
+
+<section class="stats-section">
+
+<div class="stat-card">
+
+<h2 id="totalFriends">
+0
+</h2>
+
+<p>
+Friends
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="totalTreats">
+0
+</h2>
+
+<p>
+Treats
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="totalSpent">
+
+₹0
+
+</h2>
+
+<p>
+
+Money Spent
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2 id="lastTreat">
+
+--
+
+</h2>
+
+<p>
+
+Last Treat
+
+</p>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="toolbar">
+
+<div class="search">
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search friend, restaurant or occasion..."
+>
+
+</div>
+
+
+
+<div class="toolbar-right">
+
+<select id="sortSelect">
+
+<option value="newest">
+
+Newest
+
+</option>
+
+<option value="oldest">
+
+Oldest
+
+</option>
+
+<option value="friend">
+
+Friend Name
+
+</option>
+
+<option value="amount">
+
+Highest Amount
+
+</option>
+
+</select>
+
+
+
+<button id="timelineBtn">
+
+Timeline
+
+</button>
+
+<button id="cardBtn">
+
+Cards
+
+</button>
+
+<button id="exportJSON">
+
+Export JSON
+
+</button>
+
+<button id="exportCSV">
+
+Export CSV
+
+</button>
+
+</div>
+
+</section>
+
+
+
+
+<section class="charts">
+
+<div class="chart-card">
+
+<h3>
+
+Monthly Spending
+
+</h3>
+
+<canvas id="monthlyChart"></canvas>
+
+</div>
+
+
+
+<div class="chart-card">
+
+<h3>
+
+Most Treated Friends
+
+</h3>
+
+<canvas id="friendChart"></canvas>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="entries">
+
+<div
+id="entryContainer"
+class="entry-grid">
+
+<!-- Generated using JS -->
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="timelineView" class="timeline hidden">
+
+<h2>
+
+Timeline
+
+</h2>
+
+<div id="timelineContainer">
+
+</div>
+
+</section>
+
+
+
+
+
+
+<div class="modal hidden" id="entryModal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2>
+
+Add New Memory
+
+</h2>
+
+<button id="closeModal">
+
+✕
+
+</button>
+
+</div>
+
+
+
+<form id="entryForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label>
+
+Friend Name
+
+</label>
+
+<input
+required
+id="friend"
+type="text"
+>
+
+</div>
+
+<div class="field">
+
+<label>
+
+Date
+
+</label>
+
+<input
+required
+id="date"
+type="date"
+>
+
+</div>
+
+<div class="field">
+
+<label>
+
+Restaurant / Place
+
+</label>
+
+<input
+required
+id="place"
+type="text"
+>
+
+</div>
+
+<div class="field">
+
+<label>
+
+Food
+
+</label>
+
+<input
+id="food"
+type="text"
+>
+
+</div>
+
+<div class="field">
+
+<label>
+
+Amount
+
+</label>
+
+<input
+required
+id="amount"
+type="number"
+>
+
+</div>
+
+<div class="field">
+
+<label>
+
+Occasion
+
+</label>
+
+<input
+id="occasion"
+type="text"
+placeholder="Birthday, Coffee, Dinner..."
+>
+
+</div>
+
+<div class="field full">
+
+<label>
+
+Notes
+
+</label>
+
+<textarea
+id="notes"
+rows="5"
+></textarea>
+
+</div>
+
+<div class="field full">
+
+<label>
+
+Photo URL (Optional)
+
+</label>
+
+<input
+id="photo"
+type="url"
+>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button
+type="submit"
+class="primary-btn">
+
+Save Memory
+
+</button>
+
+<button
+type="button"
+id="cancelBtn">
+
+Cancel
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+<!-- =======================
+     Floating Action Button
+======================== -->
+
+<button class="fab" id="fabButton" title="Add New Entry">
+    +
+</button>
+
+<!-- =======================
+        Import Modal
+======================== -->
+
+<div class="modal hidden" id="importModal">
+
+    <div class="modal-content small">
+
+        <div class="modal-header">
+
+            <h2>Import Friend Log</h2>
+
+            <button id="closeImport">
+                ✕
+            </button>
+
+        </div>
+
+        <p>
+
+            Restore your previously exported JSON file.
+
+        </p>
+
+        <input
+            type="file"
+            id="importFile"
+            accept=".json"
+        >
+
+        <div class="buttons">
+
+            <button id="importJSON" class="primary-btn">
+
+                Import
+
+            </button>
+
+            <button id="cancelImport">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- =======================
+       Toast Notification
+======================== -->
+
+<div id="toast" class="toast">
+
+    <span id="toastText">
+
+        Saved Successfully
+
+    </span>
+
+</div>
+
+
+
+
+
+
+<!-- =======================
+      Empty State
+======================== -->
+
+<template id="emptyStateTemplate">
+
+<div class="empty-state">
+
+<div class="empty-icon">
+
+🍜
+
+</div>
+
+<h2>
+
+No Memories Yet
+
+</h2>
+
+<p>
+
+The best friendships are remembered over food.
+
+Start your journey by recording your very first treat.
+
+</p>
+
+<button class="primary-btn" id="emptyAdd">
+
+Add First Memory
+
+</button>
+
+</div>
+
+</template>
+
+
+
+
+
+
+<!-- =======================
+       Card Template
+======================== -->
+
+<template id="entryTemplate">
+
+<div class="memory-card">
+
+<div class="memory-image">
+
+<img class="photo" src="" alt="Memory">
+
+</div>
+
+<div class="memory-content">
+
+<div class="top-row">
+
+<h2 class="friend-name">
+
+Rahul Sharma
+
+</h2>
+
+<span class="amount">
+
+₹0
+
+</span>
+
+</div>
+
+<div class="meta">
+
+<span class="date">
+
+📅
+
+</span>
+
+<span class="place">
+
+📍
+
+</span>
+
+</div>
+
+<div class="food">
+
+🍕 Pizza
+
+</div>
+
+<div class="occasion">
+
+🎉 Birthday
+
+</div>
+
+<p class="notes">
+
+Notes...
+
+</p>
+
+<div class="actions">
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</template>
+
+
+
+
+
+
+
+<!-- =======================
+      Timeline Template
+======================== -->
+
+<template id="timelineTemplate">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<h3 class="timelineFriend">
+
+Friend
+
+</h3>
+
+<p class="timelineDate">
+
+Date
+
+</p>
+
+<p class="timelineRestaurant">
+
+Restaurant
+
+</p>
+
+<p class="timelineFood">
+
+Food
+
+</p>
+
+<p class="timelineOccasion">
+
+Occasion
+
+</p>
+
+</div>
+
+</div>
+
+</template>
+
+
+
+
+
+
+
+<footer class="footer">
+
+<div class="footer-content">
+
+<p>
+
+Made with ❤️, coffee ☕ and countless shared meals.
+
+</p>
+
+<p>
+
+© 2026 Venkatesh Kumar
+
+</p>
+
+</div>
+
+</footer>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/friend-log.js"></script>
+
+</body>
+
+</html>
