@@ -16,5 +16,23 @@
       "pizza",
       "research"
     ]
+  },
+  {
+    "id": 2,
+    "friend": "Rahul Poddar",
+    "date": "2026-07-28",
+    "restaurant": " ",
+    "food": "Sweets - 2 types",
+    "amount": 1,
+    "occasion": "Nothing",
+    "city": "IITK gROUND",
+    "rating": 5,
+    "notes": "Bhai ka kehna tha kabhi kuchh nhi khilata hai",
+    "image": "https://images.unsplash.com/photo-1695568180070-8b5acead5cf4?q=80&w=687",
+    "tags": [
+      "Sweets",
+      "Anarsa",
+      "Mahaveer Mandir Prasad"
+    ]
   }
 ]
