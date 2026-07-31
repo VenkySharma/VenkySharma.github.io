@@ -162,16 +162,16 @@ function renderCards(data = logs) {
         const img =
             clone.querySelector(".photo");
 
-        img.src =
-            item.photo ||
-            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800";
+        //img.src =
+         //   item.photo ||
+           // "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800";
 
-        img.onerror = () => {
+        //img.onerror = () => {
 
-            img.src =
-            "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800";
+          //  img.src =
+            //"https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800";
 
-        };
+        //};
 
         clone.querySelector(".edit-btn")
             .addEventListener("click", () => {
