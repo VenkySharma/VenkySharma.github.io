@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "friend": "Rahul Sharma",
+    "date": "2026-07-31",
+    "restaurant": "Pizza Hut",
+    "food": "Farmhouse Pizza",
+    "amount": 720,
+    "occasion": "Birthday",
+    "city": "Kanpur",
+    "rating": 5,
+    "notes": "Discussed PQC paper after dinner.",
+    "image": "/images/treats/2026-07-31-pizza.jpg",
+    "tags": [
+      "birthday",
+      "pizza",
+      "research"
+    ]
+  }
+]
