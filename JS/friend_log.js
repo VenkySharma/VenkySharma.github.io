@@ -3,7 +3,33 @@
    Part 1 - Core
 ===================================================== */
 
-let logs = JSON.parse(localStorage.getItem("friendLogs")) || [];
+let logs = [];
+
+async function loadLogs(){
+
+    try{
+
+        const response = await fetch("/data/friends.json");
+
+        logs = await response.json();
+
+        renderCards();
+
+        updateStats();
+
+        updateCharts();
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+    }
+
+}
+
+loadLogs();
 
 const entryContainer = document.getElementById("entryContainer");
 const template = document.getElementById("entryTemplate");
@@ -20,9 +46,6 @@ const toastText = document.getElementById("toastText");
     Helpers
 ======================================= */
 
-function saveLogs() {
-    localStorage.setItem("friendLogs", JSON.stringify(logs));
-}
 
 function formatDate(date) {
     return new Date(date).toLocaleDateString("en-IN", {
@@ -274,7 +297,6 @@ form.addEventListener("submit",(e)=>{
 
     }
 
-    saveLogs();
 
     renderCards();
 
@@ -327,8 +349,6 @@ function deleteEntry(index){
     if(!ok) return;
 
     logs.splice(index,1);
-
-    saveLogs();
 
     renderCards();
 
@@ -802,9 +822,7 @@ document
 
         try{
 
-            logs=JSON.parse(e.target.result);
 
-            saveLogs();
 
             renderCards();
 
