@@ -9,7 +9,7 @@ async function loadLogs(){
 
     try{
 
-        const response = await fetch("/data/friends.json");
+        const response = await fetch("/Data/Friends.json");
 
         logs = await response.json();
 
